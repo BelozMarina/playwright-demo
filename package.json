@@ -1,0 +1,26 @@
+{
+  "name": "playwright-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test-ui": "npx playwright test --ui",
+    "test show-report": "npx playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BelozMarina/playwright-demo.git"
+  },
+  "keywords": [],
+  "author": "m.bielozorova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BelozMarina/playwright-demo/issues"
+  },
+  "homepage": "https://github.com/BelozMarina/playwright-demo#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.13.17"
+  }
+}
