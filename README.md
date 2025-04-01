@@ -10,8 +10,8 @@ This repository contains automated tests for a web application using Playwright.
 ## Setup
 
 ```
- git clone https://github.com/BelozMarina/playwright-demo.git
- cd playwright-demo
+git clone https://github.com/BelozMarina/playwright-demo.git
+cd playwright-demo
 npm install
 npx playwright install
 ```
