@@ -26,7 +26,7 @@ npx playwright install
 
 - Debug mode: `npx playwright test --debug`
 
-- Specific browser: `npx playwright test --browser=chromium`
+- Specific browser: `npx playwright test --project=chromium`
 
 ## View Reports
 

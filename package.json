@@ -5,7 +5,9 @@
   "scripts": {
     "test": "npx playwright test",
     "test-ui": "npx playwright test --ui",
-    "test show-report": "npx playwright show-report"
+    "test show-report": "npx playwright show-report",
+    "test in firefox": "npx playwright test --project=firefox",
+    "test in webkit": "npx playwright test --project=webkit"
   },
   "repository": {
     "type": "git",
