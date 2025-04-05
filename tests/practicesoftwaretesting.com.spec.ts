@@ -2,8 +2,8 @@ import { test, expect, Locator } from '@playwright/test';
 
 test('Verify login with valid credentials', async ({ page }) => {
   await page.goto('/auth/login');
-  await page.getByTestId('email').fill('customer@practicesoftwaretesting.com');
-  await page.getByTestId('password').fill('welcome01');
+  await page.getByTestId('email').fill(process.env.USER_EMAIL!);
+  await page.getByTestId('password').fill(process.env.USER_PASSWORD!);
   await page.getByTestId('login-submit').click();
 
   await expect(
@@ -17,14 +17,14 @@ test('Verify login with valid credentials', async ({ page }) => {
   await expect(
     page.getByTestId('nav-menu'),
     'Username "Jane Doe" not found in the navigation bar'
-  ).toHaveText('Jane Doe');
+  ).toHaveText(process.env.USER_NAME!);
 });
 
 test('Verify user can view product details', async ({ page }) => {
   await page.goto('/');
   await page.getByAltText('Combination Pliers').click();
 
-  await expect(page).toHaveURL(/product?\//);
+  expect(page.url()).toContain('/product');
   await expect(page.getByTestId('product-name')).toContainText(
     'Combination Pliers'
   );
@@ -37,7 +37,7 @@ test('Verify user can add product to cart', async ({ page }) => {
   await page.goto('/', { waitUntil: 'load' });
   await page.getByAltText('Slip Joint Pliers').click();
 
-  await expect(page).toHaveURL(/product?\//);
+  await expect(page.url()).toContain('/product');
   await expect(page.getByTestId('product-name')).toHaveText(
     'Slip Joint Pliers'
   );
@@ -49,7 +49,7 @@ test('Verify user can add product to cart', async ({ page }) => {
   ).toBeVisible();
   await expect(
     page.getByRole('alert', { name: 'Product added to shopping cart' })
-  ).toBeHidden({ timeout: 8000 });
+  ).toBeHidden({ timeout: 8_000 });
   await expect(page.getByTestId('cart-quantity')).toHaveText('1');
 
   await page.getByTestId('nav-cart').click();
