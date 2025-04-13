@@ -1,12 +1,13 @@
 import { test, expect, Locator } from '@playwright/test';
 import { LoginPage } from '../pages/login.page';
 import { HomePage } from '../pages/home/home.page';
+import { envConfig } from '../env.config';
 
 test('Verify login with valid credentials', async ({ page }) => {
   const loginPage = new LoginPage(page);
 
   await page.goto('/auth/login');
-  await loginPage.login(process.env.USER_EMAIL!, process.env.USER_PASSWORD!);
+  await loginPage.login(envConfig.USER_EMAIL, envConfig.USER_PASSWORD);
 
   await expect(
     page,
@@ -19,7 +20,7 @@ test('Verify login with valid credentials', async ({ page }) => {
   await expect(
     page.getByTestId('nav-menu'),
     'Username "Jane Doe" not found in the navigation bar'
-  ).toHaveText(process.env.USER_NAME!);
+  ).toHaveText(envConfig.USER_NAME);
 });
 
 test('Verify user can view product details', async ({ page }) => {
