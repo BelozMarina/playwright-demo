@@ -1,10 +1,12 @@
 import { test, expect, Locator } from '@playwright/test';
+import { LoginPage } from '../pages/login.page';
+import { HomePage } from '../pages/home/home.page';
 
 test('Verify login with valid credentials', async ({ page }) => {
+  const loginPage = new LoginPage(page);
+
   await page.goto('/auth/login');
-  await page.getByTestId('email').fill(process.env.USER_EMAIL!);
-  await page.getByTestId('password').fill(process.env.USER_PASSWORD!);
-  await page.getByTestId('login-submit').click();
+  await loginPage.login(process.env.USER_EMAIL!, process.env.USER_PASSWORD!);
 
   await expect(
     page,
