@@ -5,10 +5,14 @@ import {
   SortOption,
 } from './fragments/products.filters.fragment';
 import { expect, Locator, Page } from '@playwright/test';
+import { HandTools, Other, PowerTools } from './enums/categoryEnum';
 
 export class HomePage extends BasePage {
-  readonly productName = this.page.getByTestId('product-name');
-  readonly productPrice = this.page.getByTestId('product-price');
+  readonly productName: Locator = this.page.getByTestId('product-name');
+  readonly productPrice: Locator = this.page.getByTestId('product-price');
+  readonly filteredProducts: Locator =
+    this.page.getByTestId('filter_completed');
+  readonly skeleton = this.page.locator('div.skeleton');
   readonly filtersFragment: ProductsFiltersFragment =
     new ProductsFiltersFragment(this.page);
 
@@ -30,6 +34,8 @@ export class HomePage extends BasePage {
     switch (sortOption) {
       case 'Name (A - Z)': {
         const actualListProdName = await this.getListProductNames();
+        expect.soft(actualListProdName.length).toBeGreaterThan(0);
+
         const expectedListProdName = actualListProdName.toSorted();
         expect(
           actualListProdName,
@@ -39,6 +45,8 @@ export class HomePage extends BasePage {
       }
       case 'Name (Z - A)': {
         const actualListProdName = await this.getListProductNames();
+        expect.soft(actualListProdName.length).toBeGreaterThan(0);
+
         const expectedListProdName = actualListProdName.toSorted().reverse();
         expect(
           actualListProdName,
@@ -48,6 +56,8 @@ export class HomePage extends BasePage {
       }
       case 'Price (Low - High)': {
         const actualListProdPrice = await this.getListProductPrices();
+        expect.soft(actualListProdPrice.length).toBeGreaterThan(0);
+
         const expectedListProdPrice = actualListProdPrice.toSorted();
         expect(
           actualListProdPrice,
@@ -57,6 +67,8 @@ export class HomePage extends BasePage {
       }
       case 'Price (High - Low)': {
         const actualListProdPrice = await this.getListProductPrices();
+        expect.soft(actualListProdPrice.length).toBeGreaterThan(0);
+
         const expectedListProdPrice = actualListProdPrice.toSorted().reverse();
         expect(
           actualListProdPrice,
@@ -67,5 +79,26 @@ export class HomePage extends BasePage {
       default:
         throw error(error);
     }
+  }
+
+  async getFilteredProducts(): Promise<string[]> {
+    const filteredProd = await this.filteredProducts.allTextContents();
+
+    return filteredProd;
+  }
+
+  async expectFilteredCategoryBySelectedName(
+    category: HandTools | PowerTools | Other
+  ): Promise<void> {
+    const filteredProducts = await this.getFilteredProducts();
+
+    expect.soft(filteredProducts.length, 'Array is empty').toBeGreaterThan(0);
+
+    filteredProducts.forEach((item) => {
+      expect(
+        item,
+        `Products are filtered incorrectly by ${category}`
+      ).toContain(category);
+    });
   }
 }

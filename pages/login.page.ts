@@ -1,5 +1,5 @@
 import { Locator, Page } from '@playwright/test';
-import { HeaderFragment } from './home/header.fragment';
+import { HeaderFragment } from './home/fragments/header.fragment';
 
 export class LoginPage {
   page: Page;
