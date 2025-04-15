@@ -13,7 +13,7 @@ sortOptionData.forEach(({ sortOpt }) => {
     });
 
     await test.step(`Select option sorting by ${sortOpt}`, async () => {
-      await homePage.filtersFragment.selectSortOptions(sortOpt);
+      homePage.filtersFragment.selectSortOptions(sortOpt);
     });
 
     await test.step(`Verify products are sorted by ${sortOpt}`, async () => {

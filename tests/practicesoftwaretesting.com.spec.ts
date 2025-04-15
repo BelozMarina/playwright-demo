@@ -6,21 +6,21 @@ import { envConfig } from '../env.config';
 test('Verify login with valid credentials', async ({ page }) => {
   const loginPage = new LoginPage(page);
 
-  await page.goto('/auth/login');
-  await loginPage.login(envConfig.USER_EMAIL, envConfig.USER_PASSWORD);
+  await test.step('Navigate to home page', async () => {
+    await loginPage.goto();
+  });
 
-  await expect(
-    page,
-    'URL mismatch! Expected: https://practicesoftwaretesting.com/account'
-  ).toHaveURL('https://practicesoftwaretesting.com/account');
-  await expect(
-    page.getByTestId('page-title'),
-    'Page title is incorrect! Expected: "My account"'
-  ).toHaveText('My account');
-  await expect(
-    page.getByTestId('nav-menu'),
-    'Username "Jane Doe" not found in the navigation bar'
-  ).toHaveText(envConfig.USER_NAME);
+  await test.step('Navigate to auth form', async () => {
+    await loginPage.headerFragment.selectSignInMenu();
+  });
+
+  await test.step('Fill out the auth form', async () => {
+    await loginPage.login(envConfig.USER_EMAIL, envConfig.USER_PASSWORD);
+  });
+
+  await test.step('Verify successful login', async () => {
+    await loginPage.expectLogin();
+  });
 });
 
 test('Verify user can view product details', async ({ page }) => {
