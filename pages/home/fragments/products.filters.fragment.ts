@@ -41,7 +41,6 @@ export class ProductsFiltersFragment extends BasePage {
     );
 
     await this.categories.getByText(`${categoryOption}`).check();
-    // await this.page.waitForLoadState('networkidle', { timeout: 2000 });
 
     await responsePromise;
   }
@@ -53,13 +52,21 @@ export class ProductsFiltersFragment extends BasePage {
   }
 
   async getCountPagesFromResponse(): Promise<number> {
-    const responsePromise = await this.page.waitForResponse(
-      (response) =>
+    let count = 0;
+    const responsePromise = this.page.waitForResponse((response) => {
+      if (
         response.url().includes('/products?between=price') &&
         response.status() === 200 &&
         response.request().method() === 'GET'
-    );
-    const result = await responsePromise.json();
+      ) {
+        count++;
+        return count === 2;
+      }
+      return false;
+    });
+
+    const response = await responsePromise;
+    const result = await response.json();
 
     return parseInt(result.last_page);
   }
