@@ -41,7 +41,7 @@ export class ProductsFiltersFragment extends BasePage {
     );
 
     await this.categories.getByText(`${categoryOption}`).check();
-    await this.page.waitForLoadState('networkidle', { timeout: 2000 });
+    // await this.page.waitForLoadState('networkidle', { timeout: 2000 });
 
     await responsePromise;
   }
