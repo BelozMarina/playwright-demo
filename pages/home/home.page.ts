@@ -115,13 +115,11 @@ export class HomePage extends BasePage {
     countPageFromResponse: number
   ): Promise<void> {
     const actualResult = await this.getCountPages();
-
-    console.log('actualResult count pages', actualResult);
-
     const expectedResult = countPageFromResponse;
 
-    console.log('expectedResult from api', expectedResult);
-
-    expect(actualResult).toBe(expectedResult);
+    expect(
+      actualResult,
+      'Count pages on home page are not equal count pages from API'
+    ).toBe(expectedResult);
   }
 }
