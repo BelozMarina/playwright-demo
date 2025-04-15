@@ -1,3 +1,9 @@
+export enum Categories {
+  HAND_TOOLS = 'Hand Tools',
+  POWER_TOOLS = 'Power Tools',
+  OTHER = 'Other',
+}
+
 export enum HandTools {
   HAMMER = 'Hammer',
   HAND_SAW = 'Hand Saw',

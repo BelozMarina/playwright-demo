@@ -5,14 +5,17 @@ import {
   SortOption,
 } from './fragments/products.filters.fragment';
 import { expect, Locator, Page } from '@playwright/test';
-import { HandTools, Other, PowerTools } from './enums/categoryEnum';
+import { HandTools, Other, PowerTools, Categories } from './enums/categoryEnum';
 
 export class HomePage extends BasePage {
   readonly productName: Locator = this.page.getByTestId('product-name');
   readonly productPrice: Locator = this.page.getByTestId('product-price');
   readonly filteredProducts: Locator =
     this.page.getByTestId('filter_completed');
-  readonly skeleton = this.page.locator('div.skeleton');
+  readonly skeleton: Locator = this.page.locator('div.skeleton');
+  readonly pagination: Locator = this.page.locator(
+    '.pagination a[aria-label^="Page"]'
+  );
   readonly filtersFragment: ProductsFiltersFragment =
     new ProductsFiltersFragment(this.page);
 
@@ -88,7 +91,7 @@ export class HomePage extends BasePage {
   }
 
   async expectFilteredCategoryBySelectedName(
-    category: HandTools | PowerTools | Other
+    category: Categories | HandTools | PowerTools | Other
   ): Promise<void> {
     const filteredProducts = await this.getFilteredProducts();
 
@@ -100,5 +103,25 @@ export class HomePage extends BasePage {
         `Products are filtered incorrectly by ${category}`
       ).toContain(category);
     });
+  }
+
+  async getCountPages(): Promise<number> {
+    const ariaLabel = this.pagination;
+
+    return await ariaLabel.count();
+  }
+
+  async expectCountPagesBySelectedCategories(
+    countPageFromResponse: number
+  ): Promise<void> {
+    const actualResult = await this.getCountPages();
+
+    console.log('actualResult count pages', actualResult);
+
+    const expectedResult = countPageFromResponse;
+
+    console.log('expectedResult from api', expectedResult);
+
+    expect(actualResult).toBe(expectedResult);
   }
 }
