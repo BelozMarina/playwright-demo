@@ -28,7 +28,7 @@ export class ProductsFiltersFragment extends BasePage {
         response.request().method() === 'GET'
     );
 
-    await this.sortDropdown.selectOption(option);
+    await this.sortDropdown.selectOption({ label: option });
     await responsePromise;
   }
 

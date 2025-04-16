@@ -4,10 +4,13 @@ import {
   ProductsFiltersFragment,
   SortOption,
 } from './fragments/products.filters.fragment';
-import { expect, Locator, Page } from '@playwright/test';
+import test, { expect, Locator, Page } from '@playwright/test';
 import { HandTools, Other, PowerTools, Categories } from './enums/categoryEnum';
 
 export class HomePage extends BasePage {
+  readonly filtersFragment: ProductsFiltersFragment =
+    new ProductsFiltersFragment(this.page);
+
   readonly productName: Locator = this.page.getByTestId('product-name');
   readonly productPrice: Locator = this.page.getByTestId('product-price');
   readonly filteredProducts: Locator =
@@ -16,8 +19,6 @@ export class HomePage extends BasePage {
   readonly pagination: Locator = this.page.locator(
     '.pagination a[aria-label^="Page"]'
   );
-  readonly filtersFragment: ProductsFiltersFragment =
-    new ProductsFiltersFragment(this.page);
 
   async getListProductNames(): Promise<string[]> {
     const listProductNames = await this.productName.allTextContents();
@@ -40,6 +41,19 @@ export class HomePage extends BasePage {
         expect.soft(actualListProdName.length).toBeGreaterThan(0);
 
         const expectedListProdName = actualListProdName.toSorted();
+
+        await test.info().attach('Sorted products name A - Z on UI', {
+          body: JSON.stringify(actualListProdName, null, 2),
+          contentType: 'application/json',
+        });
+
+        await test
+          .info()
+          .attach('Sorted products name A - Z after calculation', {
+            body: JSON.stringify(expectedListProdName, null, 2),
+            contentType: 'application/json',
+          });
+
         expect(
           actualListProdName,
           `Products are sorted incorrectly from ${sortOption}`
@@ -51,6 +65,19 @@ export class HomePage extends BasePage {
         expect.soft(actualListProdName.length).toBeGreaterThan(0);
 
         const expectedListProdName = actualListProdName.toSorted().reverse();
+
+        await test.info().attach('Sorted products name Z - A on UI', {
+          body: JSON.stringify(actualListProdName, null, 2),
+          contentType: 'application/json',
+        });
+
+        await test
+          .info()
+          .attach('Sorted products name Z - A after calculation', {
+            body: JSON.stringify(expectedListProdName, null, 2),
+            contentType: 'application/json',
+          });
+
         expect(
           actualListProdName,
           `Products are sorted incorrectly from ${sortOption}`
@@ -62,6 +89,19 @@ export class HomePage extends BasePage {
         expect.soft(actualListProdPrice.length).toBeGreaterThan(0);
 
         const expectedListProdPrice = actualListProdPrice.toSorted();
+
+        await test.info().attach('Sorted products price Low - High on UI', {
+          body: JSON.stringify(actualListProdPrice, null, 2),
+          contentType: 'application/json',
+        });
+
+        await test
+          .info()
+          .attach('Sorted products price Low - High after calculation', {
+            body: JSON.stringify(expectedListProdPrice, null, 2),
+            contentType: 'application/json',
+          });
+
         expect(
           actualListProdPrice,
           `Products are sorted incorrectly from ${sortOption}`
@@ -73,6 +113,19 @@ export class HomePage extends BasePage {
         expect.soft(actualListProdPrice.length).toBeGreaterThan(0);
 
         const expectedListProdPrice = actualListProdPrice.toSorted().reverse();
+
+        await test.info().attach('Sorted products price High - Low on UI', {
+          body: JSON.stringify(actualListProdPrice, null, 2),
+          contentType: 'application/json',
+        });
+
+        await test
+          .info()
+          .attach('Sorted products price High - Low after calculation', {
+            body: JSON.stringify(expectedListProdPrice, null, 2),
+            contentType: 'application/json',
+          });
+
         expect(
           actualListProdPrice,
           `Products are sorted incorrectly from ${sortOption}`
@@ -94,6 +147,11 @@ export class HomePage extends BasePage {
     category: Categories | HandTools | PowerTools | Other
   ): Promise<void> {
     const filteredProducts = await this.getFilteredProducts();
+
+    await test.info().attach(`Filtered products by categories - ${category}`, {
+      body: JSON.stringify(filteredProducts, null, 2),
+      contentType: 'application/json',
+    });
 
     expect.soft(filteredProducts.length, 'Array is empty').toBeGreaterThan(0);
 
