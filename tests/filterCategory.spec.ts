@@ -11,7 +11,7 @@ test('Verify user can filter products by category', async ({ page }) => {
   });
 
   await test.step(`Select option sorting by ${PowerTools.SANDER}`, async () => {
-    await homePage.filtersFragment.selectCategory(PowerTools.SANDER);
+    await homePage.filtersFragment.selectSubCategory(PowerTools.SANDER);
   });
 
   await test.step(`Verify products are filtered by ${PowerTools.SANDER}`, async () => {
@@ -30,8 +30,8 @@ test('Verify user can filter products by several categories and all sub-categori
   });
 
   await test.step(`Select option sorting by Categories`, async () => {
-    categories.forEach(({ category }) => {
-      homePage.filtersFragment.selectCustomCategories(category);
+    categories.forEach(async ({ category }) => {
+      await homePage.filtersFragment.selectCustomCategories(category);
     });
   });
 

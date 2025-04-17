@@ -1,7 +1,7 @@
 import { Locator } from '@playwright/test';
-import { BasePage } from '../basePage';
+import { baseFragment } from '../baseFragment';
 
-export class HeaderFragment extends BasePage {
+export class HeaderFragment extends baseFragment {
   readonly signIn: Locator = this.page.getByTestId('nav-sign-in');
 
   async selectSignInMenu(): Promise<void> {

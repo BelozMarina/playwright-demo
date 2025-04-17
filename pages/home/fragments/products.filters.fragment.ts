@@ -1,11 +1,11 @@
 import { expect, Locator } from '@playwright/test';
-import { BasePage } from '../basePage';
 import {
   Categories,
   HandTools,
   Other,
   PowerTools,
 } from '../enums/categoryEnum';
+import { baseFragment } from '../baseFragment';
 
 export type SortOption =
   | 'Name (A - Z)'
@@ -15,7 +15,7 @@ export type SortOption =
 
 export type CategoriesOption = Categories | HandTools | PowerTools | Other;
 
-export class ProductsFiltersFragment extends BasePage {
+export class ProductsFiltersFragment extends baseFragment {
   readonly root: Locator = this.page.getByTestId('filters');
   readonly sortDropdown: Locator = this.root.getByTestId('sort');
   readonly categories: Locator = this.root.locator('.checkbox');
@@ -32,7 +32,15 @@ export class ProductsFiltersFragment extends BasePage {
     await responsePromise;
   }
 
-  async selectCategory(categoryOption: CategoriesOption): Promise<void> {
+  async waitForProductsVisible(): Promise<void> {
+    await this.page
+      .locator(`[data-test^="product"]`)
+      .first()
+      .waitFor({ state: 'visible' });
+  }
+
+  async selectSubCategory(categoryOption: CategoriesOption): Promise<void> {
+    await this.waitForProductsVisible();
     const responsePromise = this.page.waitForResponse(
       (response) =>
         response.url().includes('/products?between=price') &&
@@ -40,15 +48,14 @@ export class ProductsFiltersFragment extends BasePage {
         response.request().method() === 'GET'
     );
 
-    await this.categories.getByText(`${categoryOption}`).check();
+    await this.categories.getByText(categoryOption).check();
 
     await responsePromise;
   }
 
   async selectCustomCategories(categoryOption: Categories): Promise<void> {
-    await this.categories
-      .getByRole('checkbox', { name: `${categoryOption}` })
-      .click({ force: true });
+    await this.waitForProductsVisible();
+    await this.categories.getByText(categoryOption).check({ force: true });
   }
 
   async getCountPagesFromResponse(): Promise<number> {

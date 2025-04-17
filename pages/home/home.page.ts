@@ -34,107 +34,43 @@ export class HomePage extends BasePage {
     );
   }
 
-  async expectSortedProducts(sortOption: SortOption): Promise<void> {
-    switch (sortOption) {
-      case 'Name (A - Z)': {
-        const actualListProdName = await this.getListProductNames();
-        expect.soft(actualListProdName.length).toBeGreaterThan(0);
+  async expectSortedProductsByName(sortOption: SortOption): Promise<void> {
+    let actualListProdName = await this.getListProductNames();
+    expect.soft(actualListProdName.length).toBeGreaterThan(0);
+    let expectedListProdName = actualListProdName.toSorted();
 
-        const expectedListProdName = actualListProdName.toSorted();
-
-        await test.info().attach('Sorted products name A - Z on UI', {
-          body: JSON.stringify(actualListProdName, null, 2),
-          contentType: 'application/json',
-        });
-
-        await test
-          .info()
-          .attach('Sorted products name A - Z after calculation', {
-            body: JSON.stringify(expectedListProdName, null, 2),
-            contentType: 'application/json',
-          });
-
-        expect(
-          actualListProdName,
-          `Products are sorted incorrectly from ${sortOption}`
-        ).toEqual(expectedListProdName);
-        break;
-      }
-      case 'Name (Z - A)': {
-        const actualListProdName = await this.getListProductNames();
-        expect.soft(actualListProdName.length).toBeGreaterThan(0);
-
-        const expectedListProdName = actualListProdName.toSorted().reverse();
-
-        await test.info().attach('Sorted products name Z - A on UI', {
-          body: JSON.stringify(actualListProdName, null, 2),
-          contentType: 'application/json',
-        });
-
-        await test
-          .info()
-          .attach('Sorted products name Z - A after calculation', {
-            body: JSON.stringify(expectedListProdName, null, 2),
-            contentType: 'application/json',
-          });
-
-        expect(
-          actualListProdName,
-          `Products are sorted incorrectly from ${sortOption}`
-        ).toEqual(expectedListProdName);
-        break;
-      }
-      case 'Price (Low - High)': {
-        const actualListProdPrice = await this.getListProductPrices();
-        expect.soft(actualListProdPrice.length).toBeGreaterThan(0);
-
-        const expectedListProdPrice = actualListProdPrice.toSorted();
-
-        await test.info().attach('Sorted products price Low - High on UI', {
-          body: JSON.stringify(actualListProdPrice, null, 2),
-          contentType: 'application/json',
-        });
-
-        await test
-          .info()
-          .attach('Sorted products price Low - High after calculation', {
-            body: JSON.stringify(expectedListProdPrice, null, 2),
-            contentType: 'application/json',
-          });
-
-        expect(
-          actualListProdPrice,
-          `Products are sorted incorrectly from ${sortOption}`
-        ).toEqual(expectedListProdPrice);
-        break;
-      }
-      case 'Price (High - Low)': {
-        const actualListProdPrice = await this.getListProductPrices();
-        expect.soft(actualListProdPrice.length).toBeGreaterThan(0);
-
-        const expectedListProdPrice = actualListProdPrice.toSorted().reverse();
-
-        await test.info().attach('Sorted products price High - Low on UI', {
-          body: JSON.stringify(actualListProdPrice, null, 2),
-          contentType: 'application/json',
-        });
-
-        await test
-          .info()
-          .attach('Sorted products price High - Low after calculation', {
-            body: JSON.stringify(expectedListProdPrice, null, 2),
-            contentType: 'application/json',
-          });
-
-        expect(
-          actualListProdPrice,
-          `Products are sorted incorrectly from ${sortOption}`
-        ).toEqual(expectedListProdPrice);
-        break;
-      }
-      default:
-        throw error(error);
+    if (sortOption === 'Name (Z - A)') {
+      expectedListProdName = expectedListProdName.toSorted().reverse();
     }
+    await test.info().attach('Sorted products name after calculation', {
+      body: JSON.stringify(expectedListProdName, null, 2),
+      contentType: 'application/json',
+    });
+
+    expect(
+      actualListProdName,
+      `Products are sorted incorrectly from ${sortOption}`
+    ).toEqual(expectedListProdName);
+  }
+
+  async expectSortedProductsByPrice(sortOption: SortOption): Promise<void> {
+    let actualListProdPrice = await this.getListProductPrices();
+    expect.soft(actualListProdPrice.length).toBeGreaterThan(0);
+
+    let expectedListProdPrice = actualListProdPrice.toSorted();
+
+    if (sortOption === 'Price (High - Low)') {
+      expectedListProdPrice = expectedListProdPrice.toSorted().reverse();
+    }
+    await test.info().attach('Sorted products name after calculation', {
+      body: JSON.stringify(expectedListProdPrice, null, 2),
+      contentType: 'application/json',
+    });
+
+    expect(
+      actualListProdPrice,
+      `Products are sorted incorrectly from ${sortOption}`
+    ).toEqual(expectedListProdPrice);
   }
 
   async getFilteredProducts(): Promise<string[]> {

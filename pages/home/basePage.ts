@@ -7,9 +7,5 @@ export abstract class BasePage {
 
   async goto(): Promise<void> {
     await this.page.goto('/', { waitUntil: 'load' });
-    await this.page
-      .locator(`[data-test^="product"]`)
-      .first()
-      .waitFor({ state: 'visible' });
   }
 }
