@@ -56,20 +56,19 @@ export class ProductsFiltersFragment extends baseFragment {
   async selectCustomCategories(categoryOption: string[]): Promise<number> {
     await this.waitForProductsVisible();
 
-    categoryOption.forEach(
-      async (category) =>
-        await this.categories.getByText(category).check({ force: true })
+    const responsePromise = this.page.waitForResponse(
+      (response) =>
+        response.url().includes('/products?between=price') &&
+        response.status() === 200 &&
+        response.request().method() === 'GET'
     );
-    const responsePromise = await this.page
-      .waitForResponse(
-        (response) =>
-          response.url().includes('/products?between=price') &&
-          response.status() === 200 &&
-          response.request().method() === 'GET'
-      )
-      .then((res) => res.json())
-      .then((json) => parseInt(json.last_page));
 
-    return responsePromise;
+    for (const category of categoryOption) {
+      await this.categories.getByText(category).check({ force: true });
+    }
+
+    const response = await responsePromise;
+    const json = await response.json();
+    return parseInt(json.last_page);
   }
 }
