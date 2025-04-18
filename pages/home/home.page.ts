@@ -1,4 +1,3 @@
-import { error } from 'console';
 import { BasePage } from './basePage';
 import {
   ProductsFiltersFragment,

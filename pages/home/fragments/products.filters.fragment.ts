@@ -53,28 +53,24 @@ export class ProductsFiltersFragment extends baseFragment {
     await responsePromise;
   }
 
-  async selectCustomCategories(categoryOption: Categories): Promise<void> {
+  async selectCustomCategories(categoryOption: string[]): Promise<number> {
     await this.waitForProductsVisible();
-    await this.categories.getByText(categoryOption).check({ force: true });
-  }
-
-  async getCountPagesFromResponse(): Promise<number> {
-    let count = 0;
-    const responsePromise = this.page.waitForResponse((response) => {
-      if (
+    const responsePromise = this.page.waitForResponse(
+      (response) =>
         response.url().includes('/products?between=price') &&
         response.status() === 200 &&
         response.request().method() === 'GET'
-      ) {
-        count++;
-        return count === 2;
-      }
-      return false;
-    });
+    );
 
-    const response = await responsePromise;
-    const result = await response.json();
+    categoryOption.forEach(
+      async (category) =>
+        await this.categories.getByText(category).check({ force: true })
+    );
 
-    return parseInt(result.last_page);
+    const result = await responsePromise
+      .then((res) => res.json())
+      .then((json) => parseInt(json.last_page));
+
+    return result;
   }
 }
