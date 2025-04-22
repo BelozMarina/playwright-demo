@@ -3,7 +3,7 @@ import {
   ProductsFiltersFragment,
   SortOption,
 } from './fragments/products.filters.fragment';
-import test, { expect, Locator, Page } from '@playwright/test';
+import test, { expect, Locator } from '@playwright/test';
 import { HandTools, Other, PowerTools, Categories } from './enums/categoryEnum';
 
 export class HomePage extends BasePage {
@@ -34,7 +34,7 @@ export class HomePage extends BasePage {
   }
 
   async expectSortedProductsByName(sortOption: SortOption): Promise<void> {
-    let actualListProdName = await this.getListProductNames();
+    const actualListProdName = await this.getListProductNames();
     expect.soft(actualListProdName.length).toBeGreaterThan(0);
     let expectedListProdName = actualListProdName.toSorted();
 
@@ -53,7 +53,7 @@ export class HomePage extends BasePage {
   }
 
   async expectSortedProductsByPrice(sortOption: SortOption): Promise<void> {
-    let actualListProdPrice = await this.getListProductPrices();
+    const actualListProdPrice = await this.getListProductPrices();
     expect.soft(actualListProdPrice.length).toBeGreaterThan(0);
 
     let expectedListProdPrice = actualListProdPrice.toSorted();

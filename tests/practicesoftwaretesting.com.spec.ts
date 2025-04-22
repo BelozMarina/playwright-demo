@@ -1,6 +1,5 @@
-import { test, expect, Locator } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/login.page';
-import { HomePage } from '../pages/home/home.page';
 import { envConfig } from '../env.config';
 
 test('Verify login with valid credentials', async ({ page }) => {
@@ -40,7 +39,7 @@ test('Verify user can add product to cart', async ({ page }) => {
   await page.goto('/', { waitUntil: 'load' });
   await page.getByAltText('Slip Joint Pliers').click();
 
-  await expect(page.url()).toContain('/product');
+  expect(page.url()).toContain('/product');
   await expect(page.getByTestId('product-name')).toHaveText(
     'Slip Joint Pliers'
   );

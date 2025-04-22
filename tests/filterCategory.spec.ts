@@ -1,7 +1,6 @@
 import test from '@playwright/test';
 import { HomePage } from '../pages/home/home.page';
 import { Categories, PowerTools } from '../pages/home/enums/categoryEnum';
-import { categoriesData } from '../testData/categoriesData';
 
 test('Verify user can filter products by category', async ({ page }) => {
   const homePage = new HomePage(page);
@@ -22,10 +21,10 @@ test('Verify user can filter products by category', async ({ page }) => {
 [
   [Categories.OTHER, Categories.POWER_TOOLS],
   [Categories.OTHER, Categories.HAND_TOOLS],
-].forEach((category) => {
-  test(`Verify user can filter products by several categories - ${category} and all sub-categories`, async ({
-    page,
-  }) => {
+].forEach((categories) => {
+  test(`Verify user can filter products by several categories - ${categories.join(
+    ' and '
+  )} and all sub-categories`, async ({ page }) => {
     const homePage = new HomePage(page);
     let countPage = 0;
 
@@ -35,7 +34,7 @@ test('Verify user can filter products by category', async ({ page }) => {
 
     await test.step(`Select option sorting by Categories`, async () => {
       countPage = await homePage.filtersFragment.selectCustomCategories(
-        category
+        categories
       );
     });
 
