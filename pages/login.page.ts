@@ -1,4 +1,4 @@
-import { expect, Locator, Page } from '@playwright/test';
+import { expect, Locator } from '@playwright/test';
 import { HeaderFragment } from './home/fragments/header.fragment';
 import { BasePage } from './home/basePage';
 import { envConfig } from '../env.config';

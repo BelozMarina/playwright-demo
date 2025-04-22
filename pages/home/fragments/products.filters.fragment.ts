@@ -1,4 +1,4 @@
-import { expect, Locator } from '@playwright/test';
+import { Locator } from '@playwright/test';
 import {
   Categories,
   HandTools,
@@ -68,7 +68,7 @@ export class ProductsFiltersFragment extends baseFragment {
     }
 
     const response = await responsePromise;
-    const json = await response.json();
+    const json = (await response.json()) as { last_page: string };
     return parseInt(json.last_page);
   }
 }
