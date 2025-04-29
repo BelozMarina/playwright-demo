@@ -1,20 +1,17 @@
-import test from '@playwright/test';
-import { HomePage } from '../pages/home/home.page';
 import { Categories, PowerTools } from '../pages/home/enums/categoryEnum';
+import { test } from '../fixtures';
 
-test('Verify user can filter products by category', async ({ page }) => {
-  const homePage = new HomePage(page);
-
+test('Verify user can filter products by category', async ({ app }) => {
   await test.step('Navigate to home page', async () => {
-    await homePage.goto();
+    await app.homePage.goto();
   });
 
   await test.step(`Select option sorting by ${PowerTools.SANDER}`, async () => {
-    await homePage.filtersFragment.selectSubCategory(PowerTools.SANDER);
+    await app.homePage.filtersFragment.selectSubCategory(PowerTools.SANDER);
   });
 
   await test.step(`Verify products are filtered by ${PowerTools.SANDER}`, async () => {
-    await homePage.expectFilteredCategoryBySelectedName(PowerTools.SANDER);
+    await app.homePage.expectFilteredCategoryBySelectedName(PowerTools.SANDER);
   });
 });
 
@@ -24,22 +21,21 @@ test('Verify user can filter products by category', async ({ page }) => {
 ].forEach((categories) => {
   test(`Verify user can filter products by several categories - ${categories.join(
     ' and '
-  )} and all sub-categories`, async ({ page }) => {
-    const homePage = new HomePage(page);
+  )} and all sub-categories`, async ({ app }) => {
     let countPage = 0;
 
     await test.step('Navigate to home page', async () => {
-      await homePage.goto();
+      await app.homePage.goto();
     });
 
     await test.step(`Select option sorting by Categories`, async () => {
-      countPage = await homePage.filtersFragment.selectCustomCategories(
+      countPage = await app.homePage.filtersFragment.selectCustomCategories(
         categories
       );
     });
 
     await test.step(`Verify products are filtered by several category`, async () => {
-      await homePage.expectCountPagesBySelectedCategories(countPage);
+      await app.homePage.expectCountPagesBySelectedCategories(countPage);
     });
   });
 });

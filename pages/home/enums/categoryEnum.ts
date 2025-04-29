@@ -28,3 +28,8 @@ export enum Other {
   SAFETY_GEAR = 'Safety Gear',
   FASTENERS = 'Fasteners',
 }
+
+export enum ProductsName {
+  COMBINATION_PLIERS = 'Combination Pliers',
+  SLIP_JOINT_PLIERS = 'Slip Joint Pliers',
+}
