@@ -21,4 +21,20 @@ export class ProductPage extends BasePage {
   async addToCart(): Promise<void> {
     await this.addToCartButton.click();
   }
+
+  async getNameCard(): Promise<string> {
+    const name = await this.productName.textContent();
+    if (name) {
+      return name;
+    }
+    throw new Error('Product name not found');
+  }
+
+  async getPriceCard(): Promise<string> {
+    const price = await this.unitPrice.textContent();
+    if (price) {
+      return price;
+    }
+    throw new Error('Product price not found');
+  }
 }

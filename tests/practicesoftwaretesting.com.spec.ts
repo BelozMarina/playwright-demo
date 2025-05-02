@@ -42,7 +42,7 @@ test('Verify user can view product details', async ({ app }) => {
   });
 });
 
-test('Verify user can add product to cart', async ({ app, page }) => {
+test('Verify user can add product to cart', async ({ app }) => {
   await test.step('Navigate to home page', async () => {
     await app.homePage.goto();
   });
@@ -63,25 +63,25 @@ test('Verify user can add product to cart', async ({ app, page }) => {
   });
   await test.step('Verify product added to cart', async () => {
     await expect(
-      page.getByRole('alert', { name: 'Product added to shopping cart' })
+      app.page.getByRole('alert', { name: 'Product added to shopping cart' })
     ).toBeVisible();
     await expect(
-      page.getByRole('alert', { name: 'Product added to shopping cart' })
+      app.page.getByRole('alert', { name: 'Product added to shopping cart' })
     ).toBeHidden({ timeout: 8_000 });
-    await expect(page.getByTestId('cart-quantity')).toHaveText('1');
+    await expect(app.page.getByTestId('cart-quantity')).toHaveText('1');
   });
 
   await test.step('Navigate to cart', async () => {
-    await app.homePage.headerFragment.selectCheckoutMenu();
+    await app.homePage.headerFragment.navigateCheckoutMenu();
   });
 
   await test.step('Verify cart page', async () => {
-    await expect(page).toHaveURL(/checkout/);
-    await expect(page.locator('.table-hover thead')).toBeVisible();
-    expect(await page.locator('.table tbody tr').count()).toBe(1);
-    await expect(page.getByTestId('product-title')).toHaveText(
+    await expect(app.page).toHaveURL(/checkout/);
+    await expect(app.page.locator('.table-hover thead')).toBeVisible();
+    expect(await app.page.locator('.table tbody tr').count()).toBe(1);
+    await expect(app.page.getByTestId('product-title')).toHaveText(
       'Slip Joint Pliers'
     );
-    await expect(page.getByTestId('proceed-1')).toBeVisible();
+    await expect(app.page.getByTestId('proceed-1')).toBeVisible();
   });
 });

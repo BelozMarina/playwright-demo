@@ -8,4 +8,8 @@ export const envConfig: IEnvConfig = {
   USER_EMAIL: process.env.USER_EMAIL!,
   USER_PASSWORD: process.env.USER_PASSWORD!,
   USER_NAME: process.env.USER_NAME!,
+  CARD_NUMBER: process.env.CARD_NUMBER!,
+  CARD_HOLDER_NAME: process.env.CARD_HOLDER_NAME!,
+  CARD_EXPIRY_DATE: process.env.CARD_EXPIRY_DATE!,
+  CARD_CVV: process.env.CARD_CVV!,
 };
