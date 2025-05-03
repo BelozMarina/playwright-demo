@@ -2,6 +2,7 @@ import { expect, Locator } from '@playwright/test';
 import { BasePage } from '../home/basePage';
 import { BillingStep } from './components/billing.step.component';
 import { PaymentStep } from './components/payment.step.component';
+import { envConfig } from '../../env.config';
 
 export type PaymentMethod =
   | 'Bank Transfer'
@@ -17,9 +18,10 @@ export class CheckoutPage extends BasePage {
   readonly checkoutTitle: Locator = this.page.getByTestId('product-title');
   readonly productPrice: Locator = this.page.getByTestId('product-price');
   readonly cardTotalPrice: Locator = this.page.getByTestId('cart-total');
-  readonly proceedToCheckoutButton: Locator =
-    this.page.getByTestId('proceed-1');
-  readonly pageMessage: Locator = this.page.getByTestId('p.ng-star-inserted');
+  readonly proceedToCheckoutButton: Locator = this.page.getByRole('button', {
+    name: 'Proceed to checkout',
+  });
+  readonly pageMessage: Locator = this.page.locator('p.ng-star-inserted');
 
   async getCheckoutTitle(): Promise<string> {
     const title = (await this.checkoutTitle.textContent())?.trim();
@@ -73,12 +75,11 @@ export class CheckoutPage extends BasePage {
   }
 
   async expectUserIsLoggedIn(): Promise<void> {
-    const textPage = await this.pageMessage.textContent();
-    if (textPage) {
-      expect(textPage).toBe(
-        'Hello , you are already logged in. You can proceed to checkout.'
+    await expect.soft(this.pageMessage).toBeVisible();
+    await expect
+      .soft(this.pageMessage)
+      .toHaveText(
+        `Hello ${envConfig.USER_NAME}, you are already logged in. You can proceed to checkout.`
       );
-    }
-    throw new Error('Page text not found');
   }
 }

@@ -9,15 +9,6 @@ export class BillingStep extends BasePage {
   readonly billingCountry: Locator = this.page.getByTestId('country');
   readonly billingPostcode: Locator = this.page.getByTestId('postal_code');
 
-  // constructor(readonly page: Page) {
-  //   this.page = page;
-  //   this.billingStreet = this.page.getByTestId('street');
-  //   this.billingCity = this.page.getByTestId('city');
-  //   this.billingState = this.page.getByTestId('state');
-  //   this.billingCountry = this.page.getByTestId('country');
-  //   this.billingPostcode = this.page.getByTestId('postal_code');
-  // }
-
   async fillInFormBillingAddress(
     billingAddress: IBillingAddress
   ): Promise<void> {

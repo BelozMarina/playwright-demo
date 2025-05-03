@@ -39,10 +39,18 @@ test('E2E purchase flow: add to cart → checkout → payment (logged-in user)',
     await loggedApp.checkoutPage.expectUserIsLoggedIn();
   });
 
+  await test.step('Proceed to billing step', async () => {
+    await loggedApp.checkoutPage.proceedToCheckout();
+  });
+
   await test.step('Fill in payment details', async () => {
     await loggedApp.checkoutPage.billingStep.fillInFormBillingAddress(
       billingAddress
     );
+  });
+
+  await test.step('Proceed to billing step', async () => {
+    await loggedApp.checkoutPage.proceedToCheckout();
   });
 
   await test.step('Select payment method', async () => {

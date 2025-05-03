@@ -13,9 +13,17 @@ export class LoginPage extends BasePage {
   readonly navMenu = this.page.getByTestId('nav-menu');
 
   async login(email: string, password: string): Promise<void> {
+    const responsePromise = this.page.waitForResponse(
+      (response) =>
+        response.url().includes('users/me') &&
+        response.status() === 200 &&
+        response.request().method() === 'GET'
+    );
     await this.email.fill(email);
     await this.password.fill(password);
     await this.submitButton.click();
+
+    await responsePromise;
   }
 
   async expectLogin(): Promise<void> {

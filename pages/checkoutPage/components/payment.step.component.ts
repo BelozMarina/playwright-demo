@@ -34,11 +34,9 @@ export class PaymentStep extends BasePage {
   }
 
   async expectPaymentSuccessMessage(): Promise<void> {
-    await expect(this.paymentSuccessMessage).toBeVisible();
-    const message = await this.paymentSuccessMessage.textContent();
-    if (message) {
-      expect(message).toBe('Payment was successful!');
-    }
-    throw new Error('Payment success message not found');
+    await expect.soft(this.paymentSuccessMessage).toBeVisible();
+    await expect
+      .soft(this.paymentSuccessMessage)
+      .toHaveText('Payment was successful');
   }
 }
