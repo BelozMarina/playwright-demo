@@ -22,7 +22,7 @@ export class PaymentStep extends BasePage {
     await this.paymentMethodDropdown.selectOption({ label: option });
   }
 
-  async fillInFormCreditCard(creditCard: ICreditCard) {
+  async fillInFormCreditCard(creditCard: ICreditCard): Promise<void> {
     await this.creditCardNumber.fill(creditCard.cardNumber);
     await this.creditCardExpiryDate.fill(creditCard.expiryDate);
     await this.creditCardCvv.fill(creditCard.cvv);
