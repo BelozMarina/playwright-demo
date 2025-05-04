@@ -5,10 +5,12 @@ import {
 } from './fragments/products.filters.fragment';
 import test, { expect, Locator } from '@playwright/test';
 import { HandTools, Other, PowerTools, Categories } from './enums/categoryEnum';
+import { HeaderFragment } from './fragments/header.fragment';
 
 export class HomePage extends BasePage {
   readonly filtersFragment: ProductsFiltersFragment =
     new ProductsFiltersFragment(this.page);
+  readonly headerFragment: HeaderFragment = new HeaderFragment(this.page);
 
   readonly productName: Locator = this.page.getByTestId('product-name');
   readonly productPrice: Locator = this.page.getByTestId('product-price');
@@ -114,5 +116,9 @@ export class HomePage extends BasePage {
       actualResult,
       'Count pages on home page are not equal count pages from API'
     ).toBe(expectedResult);
+  }
+
+  async selectCard(selectorName: string): Promise<void> {
+    await this.page.getByAltText(`${selectorName}`).click();
   }
 }
