@@ -1,7 +1,7 @@
 import { test } from '../fixtures';
 import { ProductsName } from '../pages/home/enums/categoryEnum';
 import { billingAddress } from '../testData/billingAddressData';
-import { creditCard } from '../testData/creditCardData';
+import { creditCardData } from '../testData/creditCardData';
 test('E2E purchase flow: add to cart → checkout → payment (logged-in user)', async ({
   loggedApp,
 }) => {
@@ -58,7 +58,9 @@ test('E2E purchase flow: add to cart → checkout → payment (logged-in user)',
   });
 
   await test.step('Fill in credit card details', async () => {
-    await loggedApp.checkoutPage.paymentStep.fillInFormCreditCard(creditCard);
+    await loggedApp.checkoutPage.paymentStep.fillInFormCreditCard(
+      creditCardData
+    );
   });
 
   await test.step('Submit payment', async () => {

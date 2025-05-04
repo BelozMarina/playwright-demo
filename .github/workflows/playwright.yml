@@ -15,6 +15,7 @@ jobs:
       USER_EMAIL: ${{ secrets.USER_EMAIL }}
       USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
       CARD_NUMBER: ${{secrets.CARD_NUMBER }}
+      CARD_HOLDER_NAME: ${{secrets.CARD_HOLDER_NAME}}
       CARD_EXPIRY: ${{ secrets.CARD_EXPIRY }}
       CARD_CVV: ${{ secrets.CARD_CVV }}
     steps:

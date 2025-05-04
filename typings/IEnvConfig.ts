@@ -6,4 +6,5 @@ export interface IEnvConfig {
   CARD_NUMBER: string;
   CARD_EXPIRY_DATE: string;
   CARD_CVV: string;
+  CARD_HOLDER_NAME: string;
 }

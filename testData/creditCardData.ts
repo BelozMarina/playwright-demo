@@ -1,9 +1,9 @@
 import { envConfig } from '../env.config';
 import { ICreditCard } from '../typings/ICreditCard';
 
-export const creditCard: ICreditCard = {
+export const creditCardData: ICreditCard = {
   cardNumber: envConfig.CARD_NUMBER,
-  cardHolder: 'Jon Wick',
+  cardHolder: envConfig.CARD_HOLDER_NAME,
   expiryDate: envConfig.CARD_EXPIRY_DATE,
   cvv: envConfig.CARD_CVV,
 };

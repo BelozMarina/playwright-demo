@@ -1,7 +1,7 @@
 import { expect, Locator } from '@playwright/test';
 import { PaymentMethod } from '../checkout';
-import { ICreditCard } from '../../../typings/ICreditCard';
 import { BasePage } from '../../home/basePage';
+import { ICreditCard } from '../../../typings/ICreditCard';
 
 export class PaymentStep extends BasePage {
   readonly paymentMethodDropdown: Locator =
