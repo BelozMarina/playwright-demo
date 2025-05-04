@@ -26,7 +26,6 @@ export class PaymentStep extends BasePage {
     await this.creditCardNumber.fill(creditCard.cardNumber);
     await this.creditCardExpiryDate.fill(creditCard.expiryDate);
     await this.creditCardCvv.fill(creditCard.cvv);
-    console.log('creditCard', creditCard);
     await this.creditCardHolderName.fill(creditCard.cardHolder);
   }
 
