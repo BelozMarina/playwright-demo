@@ -14,7 +14,7 @@ export const test = baseTest.extend<MyFixtures>({
   },
   loggedApp: async ({ app }, use) => {
     await app.loginPage.goto();
-    await app.loginPage.headerFragment.navigateToLoginPage();
+    await app.loginPage.headerFragment.navigateSignInMenu();
     await app.loginPage.login(envConfig.USER_EMAIL, envConfig.USER_PASSWORD);
     await use(app);
   },

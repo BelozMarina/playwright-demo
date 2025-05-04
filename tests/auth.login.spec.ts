@@ -14,7 +14,7 @@ setup('Verify login with valid credentials', async ({ app }) => {
   });
 
   await setup.step('Navigate to auth form', async () => {
-    await app.loginPage.headerFragment.navigateToLoginPage();
+    await app.loginPage.headerFragment.navigateSignInMenu();
   });
 
   await setup.step('Fill out the auth form', async () => {
