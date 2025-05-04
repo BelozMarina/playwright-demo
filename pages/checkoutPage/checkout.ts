@@ -22,37 +22,29 @@ export class CheckoutPage extends BasePage {
     name: 'Proceed to checkout',
   });
   readonly pageMessage: Locator = this.page.locator('p.ng-star-inserted');
+  readonly headTable: Locator = this.page.locator('.table-hover thead');
+  readonly bodyTable: Locator = this.page.locator('.table tbody tr');
 
   async getCheckoutTitle(): Promise<string> {
-    const title = (await this.checkoutTitle.textContent())?.trim();
-    if (title) {
-      return title;
-    }
-    throw new Error('Checkout title not found');
+    const title = (await this.checkoutTitle.textContent())!.trim();
+    return title;
   }
 
   async getLinePrice(): Promise<string> {
     const price = await this.productPrice.textContent();
     const priceResult = price?.replace('$', '');
-    if (priceResult) {
-      return priceResult;
-    }
-    throw new Error('Line price not found');
+    return priceResult!;
   }
 
   async getCardTotalPrice(): Promise<string> {
     const price = await this.cardTotalPrice.textContent();
     const priceResult = price?.replace('$', '');
-    if (priceResult) {
-      return priceResult;
-    }
-    throw new Error('Card total price not found');
+    return priceResult!;
   }
 
   async expectCheckoutDetails(cardName: string, price: string): Promise<void> {
     await this.page.waitForURL(/checkout/);
-    await this.checkoutTitle.waitFor();
-    await this.checkoutTitle.isVisible();
+    await expect(this.checkoutTitle).toBeVisible();
     const title = await this.getCheckoutTitle();
     const linePrice = await this.getLinePrice();
     const cardTotalPrice = await this.getCardTotalPrice();
@@ -81,5 +73,13 @@ export class CheckoutPage extends BasePage {
       .toHaveText(
         `Hello ${envConfig.USER_NAME}, you are already logged in. You can proceed to checkout.`
       );
+  }
+
+  async expectCheckoutPage(): Promise<void> {
+    await expect(this.page).toHaveURL(/\/checkout$/);
+    await expect(this.headTable).toBeVisible();
+    await expect(this.bodyTable).toHaveCount(1);
+    await expect(this.checkoutTitle).toHaveText('Slip Joint Pliers');
+    await expect(this.proceedToCheckoutButton).toBeVisible();
   }
 }

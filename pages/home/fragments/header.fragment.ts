@@ -6,7 +6,7 @@ export class HeaderFragment extends baseFragment {
   readonly checkout: Locator = this.page.getByTestId('nav-cart');
   readonly home: Locator = this.page.getByTestId('nav-home');
 
-  async navigateSignInMenu(): Promise<void> {
+  async navigateToLoginPage(): Promise<void> {
     await this.signIn.click();
   }
   async navigateCheckoutMenu(): Promise<void> {
