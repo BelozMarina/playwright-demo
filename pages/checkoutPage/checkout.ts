@@ -44,7 +44,6 @@ export class CheckoutPage extends BasePage {
 
   async expectCheckoutDetails(cardName: string, price: string): Promise<void> {
     await this.page.waitForURL(/checkout/);
-    await this.checkoutTitle.waitFor();
     await expect(this.checkoutTitle).toBeVisible();
     const title = await this.getCheckoutTitle();
     const linePrice = await this.getLinePrice();
