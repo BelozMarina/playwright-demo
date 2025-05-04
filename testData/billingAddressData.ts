@@ -1,9 +1,10 @@
 import { IBillingAddress } from '../typings/IBillingAddress';
+import { faker } from '@faker-js/faker';
 
 export const billingAddress: IBillingAddress = {
-  street: '123 Main St',
-  city: 'Anytown',
-  state: 'CA',
-  country: 'USA',
-  postcode: '12345',
+  street: faker.location.street(),
+  city: faker.location.city(),
+  state: faker.location.state(),
+  country: faker.location.country(),
+  postcode: faker.location.zipCode(),
 };

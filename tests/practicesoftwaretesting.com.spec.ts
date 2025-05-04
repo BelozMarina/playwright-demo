@@ -1,4 +1,3 @@
-import { expect } from '@playwright/test';
 import { test } from '../fixtures';
 import { ProductsName } from '../pages/home/enums/categoryEnum';
 
@@ -62,13 +61,7 @@ test('Verify user can add product to cart', async ({ app }) => {
     await app.productPage.addToCart();
   });
   await test.step('Verify product added to cart', async () => {
-    await expect(
-      app.page.getByRole('alert', { name: 'Product added to shopping cart' })
-    ).toBeVisible();
-    await expect(
-      app.page.getByRole('alert', { name: 'Product added to shopping cart' })
-    ).toBeHidden({ timeout: 8_000 });
-    await expect(app.page.getByTestId('cart-quantity')).toHaveText('1');
+    await app.productPage.expectProductAddedToCart();
   });
 
   await test.step('Navigate to cart', async () => {
@@ -76,12 +69,6 @@ test('Verify user can add product to cart', async ({ app }) => {
   });
 
   await test.step('Verify cart page', async () => {
-    await expect(app.page).toHaveURL(/checkout/);
-    await expect(app.page.locator('.table-hover thead')).toBeVisible();
-    expect(await app.page.locator('.table tbody tr').count()).toBe(1);
-    await expect(app.page.getByTestId('product-title')).toHaveText(
-      'Slip Joint Pliers'
-    );
-    await expect(app.page.getByTestId('proceed-1')).toBeVisible();
+    await app.checkoutPage.expectCheckoutPage();
   });
 });
