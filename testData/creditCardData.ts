@@ -3,7 +3,7 @@ import { ICreditCard } from '../typings/ICreditCard';
 
 export const creditCard: ICreditCard = {
   cardNumber: envConfig.CARD_NUMBER,
-  cardHolder: envConfig.CARD_HOLDER,
+  cardHolder: 'Jon Wick',
   expiryDate: envConfig.CARD_EXPIRY_DATE,
   cvv: envConfig.CARD_CVV,
 };

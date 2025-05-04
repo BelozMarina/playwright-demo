@@ -11,5 +11,4 @@ export const envConfig: IEnvConfig = {
   CARD_NUMBER: process.env.CARD_NUMBER!,
   CARD_EXPIRY_DATE: process.env.CARD_EXPIRY!,
   CARD_CVV: process.env.CARD_CVV!,
-  CARD_HOLDER: process.env.CARD_HOLDER!,
 };

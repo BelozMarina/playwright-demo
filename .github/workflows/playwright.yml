@@ -17,7 +17,6 @@ jobs:
       CARD_NUMBER: ${{secrets.CARD_NUMBER }}
       CARD_EXPIRY: ${{ secrets.CARD_EXPIRY }}
       CARD_CVV: ${{ secrets.CARD_CVV }}
-      CARD_NAME: ${{ secrets.CARD_HOLDER }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
