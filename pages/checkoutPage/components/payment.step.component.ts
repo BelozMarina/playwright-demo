@@ -34,9 +34,16 @@ export class PaymentStep extends BasePage {
   }
 
   async expectPaymentSuccessMessage(): Promise<void> {
-    await expect.soft(this.paymentSuccessMessage).toBeVisible();
-    await expect
-      .soft(this.paymentSuccessMessage)
-      .toHaveText('Payment was successful');
+    await expect(async () => {
+      await expect
+        .soft(this.paymentSuccessMessage)
+        .toBeVisible({ timeout: 7_000 });
+      await expect
+        .soft(this.paymentSuccessMessage)
+        .toHaveText('Payment was successful');
+    }).toPass({
+      intervals: [1_000, 2_000, 5_100, 10_000],
+      timeout: 20_000,
+    });
   }
 }

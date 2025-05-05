@@ -1,10 +1,9 @@
 import { Categories, PowerTools } from '../pages/home/enums/categoryEnum';
 import { test } from '../fixtures';
-import path from 'path';
 
-test.use({
-  storageState: path.join(process.cwd(), 'playwright', '.auth', 'user.json'),
-});
+// test.use({
+//   storageState: path.join(__dirname, '../.auth/user.json'),
+// });
 test('Verify user can filter products by category', async ({ app }) => {
   await test.step('Navigate to home page', async () => {
     await app.homePage.goto();

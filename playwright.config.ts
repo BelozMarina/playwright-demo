@@ -1,6 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
 import { envConfig } from './env.config';
-import path from 'path';
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -39,21 +38,10 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'setup',
-      testMatch: /.*\.setup\.ts/,
-    },
-    {
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
-        storageState: path.join(
-          process.cwd(),
-          'playwright',
-          '.auth',
-          'user.json'
-        ),
       },
-      dependencies: ['setup'],
     },
 
     // {
