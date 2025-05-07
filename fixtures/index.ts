@@ -16,10 +16,10 @@ export const test = baseTest.extend<MyFixtures>({
   },
   loggedApp: async ({ browser }, use) => {
     const userAuthFile = path.join(__dirname, '../.auth/user.json');
-    const isCI = process.env.CI === 'true';
+    // const isCI = process.env.CI === 'true';
     let context;
 
-    if (!isCI || !fs.existsSync(userAuthFile)) {
+    if (!fs.existsSync(userAuthFile)) {
       // If no auth file, create new context and perform login
       context = await browser.newContext();
       const page = await context.newPage();
