@@ -2,7 +2,6 @@ import path from 'path';
 import { envConfig } from '../env.config';
 import { AppPage } from '../pages/appPage';
 import { test as baseTest } from '@playwright/test';
-// import fs from 'fs';
 
 type MyFixtures = {
   app: AppPage;
