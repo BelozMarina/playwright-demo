@@ -1,0 +1,626 @@
+{
+  "current_page": 1,
+  "data": [
+    {
+      "id": "01JTP1XC7FEQTNB13QXX937DYT",
+      "name": "Combination Pliers",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra felis nec pellentesque feugiat. Donec faucibus arcu maximus, convallis nisl eu, placerat dolor. Morbi finibus neque nec tincidunt pharetra. Sed eget tortor malesuada, mollis enim id, condimentum nisi. In viverra quam at bibendum ultricies. Aliquam quis eros ex. Etiam at pretium massa, ut pharetra tortor. Sed vel metus sem. Suspendisse ac molestie turpis. Duis luctus justo massa, faucibus ornare eros elementum et. Vestibulum quis nisl vitae ante dapibus tempor auctor ut leo. Mauris consectetur et magna at ultricies. Proin a aliquet turpis.",
+      "price": 14.15,
+      "is_location_offer": false,
+      "is_rental": false,
+      "in_stock": true,
+      "product_image": {
+        "id": "01JTP1XC6ZCFSJ5CC2VX8M4PFH",
+        "by_name": "Helinton Fantin",
+        "by_url": "https://unsplash.com/@fantin",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/W8BNwvOvW4M",
+        "file_name": "pliers01.avif",
+        "title": "Combination pliers"
+      },
+      "category": {
+        "id": "01JTP1XC6JFTNF341E00MDHKXY",
+        "name": "Pliers",
+        "slug": "pliers",
+        "parent_id": "01JTP1XC66J6SZRR4N6BK7ATX1"
+      },
+      "brand": {
+        "id": "01JTP1XC5H9PB5PB90ZGQ1KXTJ",
+        "name": "ForgeFlex Tools",
+        "slug": "forgeflex-tools"
+      }
+    },
+    {
+      "id": "01JTP1XC7H72N5VQSKTQ6KC4FN",
+      "name": "Pliers",
+      "description": "Nunc vulputate, orci at congue faucibus, enim neque sodales nulla, nec imperdiet augue odio vel nibh. Etiam auctor, ligula quis gravida dictum, mi massa commodo ante, sollicitudin pulvinar nulla justo hendrerit lacus. Vivamus rutrum pharetra molestie. Fusce tristique odio tristique, elementum est eget, porttitor diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas at ligula sed sapien porta pretium. Aenean cursus, magna in blandit consectetur, libero orci aliquet eros, et maximus nunc est eu dolor. Aenean non pellentesque eros. In sodales orci eget orci fringilla, vitae feugiat elit porta. Etiam aliquam, mi pretium tempus mattis, mauris ipsum gravida risus, at tempor nulla ipsum molestie ligula. Ut placerat, urna sit amet tincidunt volutpat, ex orci luctus purus, nec laoreet dolor sapien vel erat.",
+      "price": 12.01,
+      "is_location_offer": false,
+      "is_rental": false,
+      "in_stock": true,
+      "product_image": {
+        "id": "01JTP1XC6ZCFSJ5CC2VX8M4PFJ",
+        "by_name": "Everyday basics",
+        "by_url": "https://unsplash.com/@zanardi",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/I8eTuMmxIfo",
+        "file_name": "pliers02.avif",
+        "title": "Pliers"
+      },
+      "category": {
+        "id": "01JTP1XC6JFTNF341E00MDHKXY",
+        "name": "Pliers",
+        "slug": "pliers",
+        "parent_id": "01JTP1XC66J6SZRR4N6BK7ATX1"
+      },
+      "brand": {
+        "id": "01JTP1XC5H9PB5PB90ZGQ1KXTJ",
+        "name": "ForgeFlex Tools",
+        "slug": "forgeflex-tools"
+      }
+    },
+    {
+      "id": "01JTP1XC7JM3KYBHE893NZGW4F",
+      "name": "Bolt Cutters",
+      "description": "Aliquam viverra scelerisque tempus. Ut vehicula, ex sed elementum rhoncus, sem neque vehicula turpis, sit amet accumsan mauris justo non magna. Cras ut vulputate lectus, sit amet sollicitudin enim. Quisque sit amet turpis ut orci pulvinar vestibulum non at velit. Quisque ultrices malesuada felis non rutrum. Sed molestie lobortis nisl, in varius arcu dictum vel. In sit amet fringilla orci. Quisque ac magna dui. Nam pulvinar nulla sed commodo ultricies. Suspendisse aliquet quis eros sit amet gravida. Aenean vitae arcu in sapien sodales commodo.",
+      "price": 48.41,
+      "is_location_offer": true,
+      "is_rental": false,
+      "in_stock": true,
+      "product_image": {
+        "id": "01JTP1XC6ZCFSJ5CC2VX8M4PFK",
+        "by_name": "Michael Dziedzic",
+        "by_url": "https://unsplash.com/@lazycreekimages",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/pM9pkc9J918",
+        "file_name": "pliers03.avif",
+        "title": "Bolt cutters"
+      },
+      "category": {
+        "id": "01JTP1XC6JFTNF341E00MDHKXY",
+        "name": "Pliers",
+        "slug": "pliers",
+        "parent_id": "01JTP1XC66J6SZRR4N6BK7ATX1"
+      },
+      "brand": {
+        "id": "01JTP1XC5H9PB5PB90ZGQ1KXTK",
+        "name": "MightyCraft Hardware",
+        "slug": "mightycraft-hardware"
+      }
+    },
+    {
+      "id": "01JTP1XC7MTWYA15MNSYTV6YE9",
+      "name": "Long Nose Pliers",
+      "description": "Phasellus consequat fermentum quam id sodales. Curabitur nec dui orci. Fusce id turpis laoreet, lobortis ex non, finibus libero. Vivamus id enim eu nibh placerat maximus. Aenean semper dui a laoreet venenatis. Vestibulum at ligula quam. Donec interdum tristique neque lacinia laoreet. Sed auctor fermentum congue. Integer aliquet vulputate feugiat. Quisque malesuada diam iaculis ornare maximus. Mauris quam massa, sodales at mattis non, consectetur eget magna. Aliquam eget congue metus, sed congue leo. Nam sit amet est id ligula volutpat pharetra non id nisl. Vestibulum ac enim vitae nisi tempus cursus. Aliquam erat volutpat.",
+      "price": 14.24,
+      "is_location_offer": false,
+      "is_rental": false,
+      "in_stock": false,
+      "product_image": {
+        "id": "01JTP1XC6ZCFSJ5CC2VX8M4PFM",
+        "by_name": "Brett Jordan",
+        "by_url": "https://unsplash.com/@brett_jordan",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/GamuDTVm02g",
+        "file_name": "pliers04.avif",
+        "title": "Long nose pliers"
+      },
+      "category": {
+        "id": "01JTP1XC6JFTNF341E00MDHKXY",
+        "name": "Pliers",
+        "slug": "pliers",
+        "parent_id": "01JTP1XC66J6SZRR4N6BK7ATX1"
+      },
+      "brand": {
+        "id": "01JTP1XC5H9PB5PB90ZGQ1KXTK",
+        "name": "MightyCraft Hardware",
+        "slug": "mightycraft-hardware"
+      }
+    },
+    {
+      "id": "01JTP1XC7N2EEPP7FTKANVV9E7",
+      "name": "Slip Joint Pliers",
+      "description": "Ut cursus dui non ante convallis, facilisis auctor leo luctus. Maecenas a rhoncus metus. Sed in efficitur dolor, vulputate accumsan odio. Sed ex quam, dictum in fringilla at, vestibulum eu sem. Quisque ante orci, vulputate non porttitor eu, aliquet et nunc. Nunc a rhoncus dui. Nunc ac est non eros scelerisque maximus at a eros. Phasellus sed egestas diam, at tempus erat. Morbi sit amet congue tellus, at accumsan magna. Etiam non ornare nisl, sed luctus nisi. Pellentesque ut odio ut sapien aliquet eleifend.",
+      "price": 9.17,
+      "is_location_offer": false,
+      "is_rental": false,
+      "in_stock": true,
+      "product_image": {
+        "id": "01JTP1XC6ZCFSJ5CC2VX8M4PFN",
+        "by_name": "Yasin Hasan",
+        "by_url": "https://unsplash.com/@yasin",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/dwlxTSpfKXg",
+        "file_name": "pliers05.avif",
+        "title": "Slip joint pliers"
+      },
+      "category": {
+        "id": "01JTP1XC6JFTNF341E00MDHKXY",
+        "name": "Pliers",
+        "slug": "pliers",
+        "parent_id": "01JTP1XC66J6SZRR4N6BK7ATX1"
+      },
+      "brand": {
+        "id": "01JTP1XC5H9PB5PB90ZGQ1KXTK",
+        "name": "MightyCraft Hardware",
+        "slug": "mightycraft-hardware"
+      }
+    },
+    {
+      "id": "01JTP1XC7PQ6FSZGA317ZFF1HM",
+      "name": "Claw Hammer with Shock Reduction Grip",
+      "description": "Nam efficitur, turpis molestie bibendum lobortis, risus arcu congue tortor, id consequat nibh sem a libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean non tincidunt tortor, vel ultricies tortor. Vivamus pulvinar efficitur arcu sit amet accumsan. Aenean dui erat, bibendum at dapibus in, feugiat non eros. Duis sodales felis ex, quis ullamcorper odio interdum non. Ut viverra magna eu augue luctus, quis convallis lectus auctor. Duis ultrices erat urna. Aliquam augue odio, mattis vitae finibus in, pellentesque nec dui. Curabitur nec odio in augue posuere posuere. Vivamus ante est, iaculis ut interdum et, hendrerit ac ante. Fusce ac venenatis neque, id fermentum nulla. Quisque tristique ornare nisi, vitae convallis dui faucibus quis. Vestibulum vel dapibus dolor.",
+      "price": 13.41,
+      "is_location_offer": true,
+      "is_rental": false,
+      "in_stock": true,
+      "product_image": {
+        "id": "01JTP1XC6ZCFSJ5CC2VX8M4PFP",
+        "by_name": "iMattSmart",
+        "by_url": "https://unsplash.com/@imattsmart",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/jaLaLQdkBOE",
+        "file_name": "hammer01.avif",
+        "title": "Claw Hammer"
+      },
+      "category": {
+        "id": "01JTP1XC6JFTNF341E00MDHKXT",
+        "name": "Hammer",
+        "slug": "hammer",
+        "parent_id": "01JTP1XC66J6SZRR4N6BK7ATX1"
+      },
+      "brand": {
+        "id": "01JTP1XC5H9PB5PB90ZGQ1KXTJ",
+        "name": "ForgeFlex Tools",
+        "slug": "forgeflex-tools"
+      }
+    },
+    {
+      "id": "01JTP1XC7QV2DFAEECX2NN44GZ",
+      "name": "Hammer",
+      "description": "Mauris mollis odio est, ac vehicula dui lobortis vel. Cras facilisis, mauris ut vehicula dignissim, ex nunc sollicitudin velit, a fermentum mi odio ut massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a sapien vel libero fermentum rhoncus. Etiam ac imperdiet arcu, ac accumsan risus. Fusce vitae lacinia sem, sit amet sagittis lorem. Curabitur efficitur ultricies sem, eu placerat ante tincidunt a. Morbi faucibus ullamcorper mi a mollis. Aenean sed magna aliquam, mollis dui at, condimentum ex. Donec blandit bibendum enim, lacinia vestibulum tellus laoreet sollicitudin. In vitae ullamcorper metus, ut interdum augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam scelerisque dignissim varius. Nulla facilisi. Praesent eros dolor, ultricies sit amet pellentesque porttitor, pretium ut lectus. Nullam tempus tellus sapien, non condimentum mauris volutpat eget.",
+      "price": 12.58,
+      "is_location_offer": false,
+      "is_rental": false,
+      "in_stock": true,
+      "product_image": {
+        "id": "01JTP1XC6ZCFSJ5CC2VX8M4PFQ",
+        "by_name": "Jozsef Hocza",
+        "by_url": "https://unsplash.com/@hocza",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/D3nouOYbALc",
+        "file_name": "hammer02.avif",
+        "title": "Hammer"
+      },
+      "category": {
+        "id": "01JTP1XC6JFTNF341E00MDHKXT",
+        "name": "Hammer",
+        "slug": "hammer",
+        "parent_id": "01JTP1XC66J6SZRR4N6BK7ATX1"
+      },
+      "brand": {
+        "id": "01JTP1XC5H9PB5PB90ZGQ1KXTJ",
+        "name": "ForgeFlex Tools",
+        "slug": "forgeflex-tools"
+      }
+    },
+    {
+      "id": "01JTP1XC7RVZGTT1BN2AG68M44",
+      "name": "Claw Hammer",
+      "description": "Cras pulvinar nisl a quam fringilla tempus. Sed lectus urna, mattis quis arcu eget, aliquam laoreet mauris. Praesent accumsan facilisis eros, ac mattis nulla interdum nec. Phasellus ultrices eu metus in lobortis. Donec ac efficitur orci. Phasellus nulla neque, congue nec tincidunt id, ultrices vel sapien. Curabitur gravida ex leo, laoreet mollis arcu blandit vel.",
+      "price": 11.48,
+      "is_location_offer": true,
+      "is_rental": false,
+      "in_stock": true,
+      "product_image": {
+        "id": "01JTP1XC6ZCFSJ5CC2VX8M4PFR",
+        "by_name": "Andrew George",
+        "by_url": "https://unsplash.com/@andrewjoegeorge",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/YU2mCvXR0wA",
+        "file_name": "hammer03.avif",
+        "title": "Claw Hammer"
+      },
+      "category": {
+        "id": "01JTP1XC6JFTNF341E00MDHKXT",
+        "name": "Hammer",
+        "slug": "hammer",
+        "parent_id": "01JTP1XC66J6SZRR4N6BK7ATX1"
+      },
+      "brand": {
+        "id": "01JTP1XC5H9PB5PB90ZGQ1KXTK",
+        "name": "MightyCraft Hardware",
+        "slug": "mightycraft-hardware"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Sledgehammer",
+      "description": "Mauris sodales ligula vel mi sagittis, vel lobortis orci accumsan. Donec enim velit, lobortis sit amet dignissim vitae, molestie vitae libero. Curabitur ultrices interdum pellentesque. Nullam feugiat sagittis mi, sed hendrerit erat finibus cursus. Morbi mollis nulla ac metus posuere faucibus. Ut at purus turpis. Aliquam erat volutpat. Mauris euismod lacus pulvinar, aliquam erat non, laoreet turpis. Nunc sagittis tellus sed purus mattis lobortis. Vivamus venenatis ut lorem at finibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse mi felis, luctus tristique vulputate nec, auctor quis erat. Nulla eget massa vel massa bibendum vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut lacus felis, egestas ac hendrerit at, posuere venenatis quam.",
+      "stock": 11,
+      "price": 17.75,
+      "is_location_offer": 0,
+      "is_rental": 0,
+      "brand_id": 1,
+      "category_id": 3,
+      "product_image_id": 10,
+      "product_image": {
+        "id": 10,
+        "by_name": "Fausto Marqués",
+        "by_url": "https://unsplash.com/@faustomarques",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/A9dq-L3zzHA",
+        "file_name": "hammer05.jpeg",
+        "title": "Hammer"
+      },
+      "category": {
+        "id": 3,
+        "parent_id": 1,
+        "name": "Hammer",
+        "slug": "hammer"
+      },
+      "brand": {
+        "id": 1,
+        "name": "Brand name 1",
+        "slug": "brand-name-1"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Claw Hammer with Fiberglass Handle",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis elit ipsum. Maecenas eu tortor vel elit pharetra sodales. Praesent posuere odio mauris, id faucibus quam sollicitudin et. Suspendisse tristique sapien at mi blandit auctor. Aliquam ullamcorper, odio eget suscipit malesuada, velit magna pharetra diam, at pharetra enim lectus vel massa. Nulla vel lectus et quam feugiat interdum. Fusce hendrerit dignissim purus sed tincidunt. Cras eu ligula urna. Praesent laoreet ipsum ut dictum sodales. Proin sollicitudin imperdiet ante, suscipit dignissim nibh condimentum sagittis. Suspendisse placerat metus a enim fermentum imperdiet. In ut elementum lacus. Aliquam ut arcu a elit tempus tincidunt. Sed sem eros, ornare eu felis consequat, pulvinar consectetur urna. Etiam at cursus elit. Pellentesque aliquet, neque id viverra porta, purus arcu malesuada quam, at cursus ipsum ex nec erat.",
+      "stock": 11,
+      "price": 20.14,
+      "is_location_offer": 0,
+      "is_rental": 0,
+      "brand_id": 1,
+      "category_id": 3,
+      "product_image_id": 11,
+      "product_image": {
+        "id": 11,
+        "by_name": "Jonny Gios",
+        "by_url": "https://unsplash.com/@supergios",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/ARaYGFeuwpU",
+        "file_name": "hammer06.jpeg",
+        "title": "Claw Hammer"
+      },
+      "category": {
+        "id": 3,
+        "parent_id": 1,
+        "name": "Hammer",
+        "slug": "hammer"
+      },
+      "brand": {
+        "id": 1,
+        "name": "Brand name 1",
+        "slug": "brand-name-1"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Court Hammer",
+      "description": "Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis ut dictum dolor. Curabitur ligula ipsum, aliquet at nunc a, porta aliquam orci. Praesent tempor sagittis arcu et tempus. Donec porta odio et felis vulputate, ut semper mi varius. Integer bibendum nulla sed justo vehicula molestie. Quisque dictum magna sed metus maximus, non dignissim eros accumsan. Suspendisse eget augue maximus, rhoncus risus nec, sodales arcu. Sed sed egestas tortor. Proin quis cursus ligula. Integer finibus turpis eget dolor ultricies, non facilisis dolor sollicitudin. Aliquam hendrerit mollis scelerisque. Mauris interdum purus est, rutrum interdum nisi aliquam pellentesque. Cras eros eros, scelerisque quis ipsum nec, bibendum mollis mi.",
+      "stock": 11,
+      "price": 18.63,
+      "is_location_offer": 1,
+      "is_rental": 0,
+      "brand_id": 1,
+      "category_id": 3,
+      "product_image_id": 12,
+      "product_image": {
+        "id": 12,
+        "by_name": "Wesley Tingey",
+        "by_url": "https://unsplash.com/@wesleyphotography",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/9z9fxr_7Z-k",
+        "file_name": "hammer07.jpeg",
+        "title": "Hammer"
+      },
+      "category": {
+        "id": 3,
+        "parent_id": 1,
+        "name": "Hammer",
+        "slug": "hammer"
+      },
+      "brand": {
+        "id": 1,
+        "name": "Brand name 1",
+        "slug": "brand-name-1"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Wood Saw",
+      "description": "Quisque quis fermentum ligula. Aenean vulputate orci in ipsum varius, quis lacinia mauris eleifend. Quisque in turpis dapibus, consectetur nulla quis, semper felis. Nunc venenatis malesuada neque, ac rhoncus risus imperdiet eu. Proin eu eros at nibh blandit suscipit. Vestibulum condimentum nibh sit amet arcu congue, eu bibendum lorem venenatis. Nam molestie est at sem mollis porttitor. Aliquam eget purus sed lectus hendrerit finibus ac ac nunc. Nulla mi metus, euismod nec pharetra quis, porta vel nisl. Mauris euismod purus volutpat odio rhoncus, id elementum turpis rutrum. Integer semper, nunc vel pharetra mollis, magna magna euismod sem, ut scelerisque purus turpis eget lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra lectus eget lorem fermentum, ac pulvinar nulla vulputate.",
+      "stock": 11,
+      "price": 12.18,
+      "is_location_offer": 0,
+      "is_rental": 0,
+      "brand_id": 1,
+      "category_id": 4,
+      "product_image_id": 13,
+      "product_image": {
+        "id": 13,
+        "by_name": "Jonathan Cooper",
+        "by_url": "https://unsplash.com/@theshuttervision",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/fTpzd-PjyDQ",
+        "file_name": "saw01.jpeg",
+        "title": "Wood Saw"
+      },
+      "category": {
+        "id": 4,
+        "parent_id": 1,
+        "name": "Hand Saw",
+        "slug": "hand-saw"
+      },
+      "brand": {
+        "id": 1,
+        "name": "Brand name 1",
+        "slug": "brand-name-1"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Adjustable Wrench",
+      "description": "Praesent ullamcorper suscipit arcu eget interdum. Praesent bibendum molestie turpis eu lobortis. Curabitur feugiat lacus a pharetra volutpat. Vivamus et vehicula nulla. Donec vulputate mauris vitae pharetra maximus. Donec rhoncus dolor ante, in bibendum enim ultrices vitae. Curabitur ultricies, ex id aliquam sollicitudin, leo turpis posuere mauris, eget placerat ipsum nisi ac nunc. Pellentesque dapibus est id pellentesque maximus. Nunc consectetur, ex vel interdum ultricies, nisl dui cursus odio, a faucibus felis massa id massa.",
+      "stock": 11,
+      "price": 20.33,
+      "is_location_offer": 0,
+      "is_rental": 0,
+      "brand_id": 1,
+      "category_id": 5,
+      "product_image_id": 14,
+      "product_image": {
+        "id": 14,
+        "by_name": "Recha Oktaviani",
+        "by_url": "https://unsplash.com/@rechaoktaviani",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/t__61ap00Mc",
+        "file_name": "wrench01.jpeg",
+        "title": "Adjustable wrench"
+      },
+      "category": {
+        "id": 5,
+        "parent_id": 1,
+        "name": "Wrench",
+        "slug": "wrench"
+      },
+      "brand": {
+        "id": 1,
+        "name": "Brand name 1",
+        "slug": "brand-name-1"
+      }
+    },
+    {
+      "id": 15,
+      "name": "Angled Spanner",
+      "description": "Cras convallis, eros vitae laoreet cursus, lorem elit fringilla felis, non tincidunt massa leo sit amet odio. In fringilla feugiat ipsum, in pretium erat faucibus sollicitudin. Curabitur leo ex, tincidunt vel luctus non, lobortis et ex. Praesent eget maximus metus. Mauris quis ex posuere, pretium nisl nec, lacinia velit. Pellentesque ut justo faucibus, vehicula nisi vel, egestas massa. In viverra lorem sed mi aliquam, sit amet pulvinar sem lacinia. Pellentesque convallis rutrum diam in pharetra. Ut nibh lectus, tristique ac ipsum et, eleifend tempus risus. Nam sollicitudin magna ut scelerisque porttitor. In eu accumsan purus. Nam suscipit lorem erat, a pellentesque enim commodo faucibus. Aenean id tincidunt lorem.",
+      "stock": 11,
+      "price": 14.14,
+      "is_location_offer": 1,
+      "is_rental": 0,
+      "brand_id": 1,
+      "category_id": 5,
+      "product_image_id": 15,
+      "product_image": {
+        "id": 15,
+        "by_name": "Tekton",
+        "by_url": "https://unsplash.com/@tekton_tools",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/9z7t48S5C_g",
+        "file_name": "wrench02.jpeg",
+        "title": "Wrench"
+      },
+      "category": {
+        "id": 5,
+        "parent_id": 1,
+        "name": "Wrench",
+        "slug": "wrench"
+      },
+      "brand": {
+        "id": 1,
+        "name": "Brand name 1",
+        "slug": "brand-name-1"
+      }
+    },
+    {
+      "id": 16,
+      "name": "Open-end Spanners (Set)",
+      "description": "Donec sit amet auctor ex, non pellentesque nisl. Integer dignissim, sapien sit amet bibendum porttitor, justo elit lobortis erat, non hendrerit nisl nunc lobortis lacus. Pellentesque tempor metus felis, eu dapibus sem viverra vel. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed cursus molestie sem at feugiat. Nam suscipit, augue non dignissim molestie, arcu nunc suscipit risus, vitae vehicula risus tortor ut justo. Cras sed eros id orci laoreet ultricies. Phasellus lacinia euismod odio at sagittis. Nullam faucibus finibus vehicula. Aenean mauris risus, porttitor sodales consequat sed, lobortis nec massa. Duis quis ante ultrices, lacinia lacus nec, rhoncus libero. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc pellentesque quam sed ligula porttitor, id aliquam eros placerat.",
+      "stock": 11,
+      "price": 38.51,
+      "is_location_offer": 0,
+      "is_rental": 0,
+      "brand_id": 1,
+      "category_id": 5,
+      "product_image_id": 16,
+      "product_image": {
+        "id": 16,
+        "by_name": "Akshat Swaminath",
+        "by_url": "https://unsplash.com/@akshat_swaminath",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/hg34mNWFRaI",
+        "file_name": "wrench03.jpeg",
+        "title": "Open-end spanners (Set)"
+      },
+      "category": {
+        "id": 5,
+        "parent_id": 1,
+        "name": "Wrench",
+        "slug": "wrench"
+      },
+      "brand": {
+        "id": 1,
+        "name": "Brand name 1",
+        "slug": "brand-name-1"
+      }
+    },
+    {
+      "id": 17,
+      "name": "Phillips Screwdriver",
+      "description": "Sed posuere libero diam, vel mollis nulla malesuada vel. In hac habitasse platea dictumst. Proin quis sollicitudin lectus. Cras et posuere nisi. Curabitur nibh felis, sagittis id vulputate a, tempus at diam. Vestibulum molestie quis nunc in tincidunt. Vestibulum vestibulum suscipit enim id molestie. Morbi vitae nibh nibh. Cras et orci aliquet, euismod lorem eu, tincidunt orci. Sed hendrerit mattis tellus vitae vestibulum. Donec posuere elit quis condimentum porta. Pellentesque sit amet pellentesque elit, tincidunt luctus lectus. Ut porta orci sed nisi condimentum, et egestas mauris facilisis. In mollis lectus sapien, a laoreet lorem tincidunt sed.",
+      "stock": 11,
+      "price": 4.92,
+      "is_location_offer": 1,
+      "is_rental": 0,
+      "brand_id": 1,
+      "category_id": 6,
+      "product_image_id": 17,
+      "product_image": {
+        "id": 17,
+        "by_name": "Tekton",
+        "by_url": "https://unsplash.com/@tekton_tools",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/jlY6nV_STIw",
+        "file_name": "screwdriver01.jpeg",
+        "title": "Phillips Screwdriver"
+      },
+      "category": {
+        "id": 6,
+        "parent_id": 1,
+        "name": "Screwdriver",
+        "slug": "screwdriver"
+      },
+      "brand": {
+        "id": 1,
+        "name": "Brand name 1",
+        "slug": "brand-name-1"
+      }
+    },
+    {
+      "id": 18,
+      "name": "Mini Screwdriver",
+      "description": "Pellentesque tristique tortor id nulla accumsan, sit amet ultricies turpis elementum. Suspendisse quis vulputate felis. Maecenas a nibh augue. Pellentesque nec volutpat urna, quis finibus erat. Nulla leo velit, porttitor vel tortor ut, fermentum sagittis magna. Proin egestas velit quis volutpat vulputate. Aliquam id gravida orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc in metus pretium, euismod ipsum sed, viverra enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris lacinia, ligula vel ultrices commodo, quam turpis pharetra erat, id suscipit odio tortor eu urna. Morbi id dui eget augue tempor fermentum. Vestibulum iaculis lectus vel nisl ultricies ornare. Suspendisse ac risus a nibh condimentum mattis ac lacinia diam. Integer venenatis hendrerit turpis non blandit.",
+      "stock": 11,
+      "price": 13.96,
+      "is_location_offer": 0,
+      "is_rental": 0,
+      "brand_id": 1,
+      "category_id": 6,
+      "product_image_id": 18,
+      "product_image": {
+        "id": 18,
+        "by_name": "Everyday basics",
+        "by_url": "https://unsplash.com/@zanardi",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/a6LO3iO5AIk",
+        "file_name": "screwdriver02.jpeg",
+        "title": "Screwdriver"
+      },
+      "category": {
+        "id": 6,
+        "parent_id": 1,
+        "name": "Screwdriver",
+        "slug": "screwdriver"
+      },
+      "brand": {
+        "id": 1,
+        "name": "Brand name 1",
+        "slug": "brand-name-1"
+      }
+    },
+    {
+      "id": 19,
+      "name": "Sheet Sander",
+      "description": "Suspendisse vel pellentesque tellus, ut lobortis risus. Praesent sit amet feugiat felis, vel vehicula sapien. Quisque aliquet purus ut mi sagittis hendrerit. Vivamus pharetra massa non massa varius hendrerit. In dictum lectus ac volutpat congue. Donec sed lorem nec justo ullamcorper egestas nec id nibh. Mauris condimentum odio ut dui congue, sit amet blandit felis varius. Vestibulum iaculis varius lorem non venenatis.",
+      "stock": 11,
+      "price": 58.48,
+      "is_location_offer": 0,
+      "is_rental": 0,
+      "brand_id": 1,
+      "category_id": 9,
+      "product_image_id": 19,
+      "product_image": {
+        "id": 19,
+        "by_name": "subvertivo _lab",
+        "by_url": "https://unsplash.com/@subvertivo_lab",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/G6yracEEm8A",
+        "file_name": "sander01.jpeg",
+        "title": "Sheet sander"
+      },
+      "category": {
+        "id": 9,
+        "parent_id": 2,
+        "name": "Sander",
+        "slug": "sander"
+      },
+      "brand": {
+        "id": 1,
+        "name": "Brand name 1",
+        "slug": "brand-name-1"
+      }
+    },
+    {
+      "id": 20,
+      "name": "Belt Sander",
+      "description": "Nulla id consequat libero. Proin porta purus quis nulla condimentum, ac pharetra nunc tempor. Nulla sit amet volutpat quam. Aliquam suscipit non nisi quis facilisis. Integer vel urna non ante porttitor laoreet. Duis vitae justo enim. Vivamus sagittis libero et placerat malesuada. Integer non eros lectus. Aenean hendrerit nisi et vulputate vehicula. Proin euismod quis nunc sit amet mattis.",
+      "stock": 11,
+      "price": 73.59,
+      "is_location_offer": 0,
+      "is_rental": 0,
+      "brand_id": 1,
+      "category_id": 9,
+      "product_image_id": 20,
+      "product_image": {
+        "id": 20,
+        "by_name": "Luther.M.E. Bottrill",
+        "by_url": "https://unsplash.com/@luthermeb",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/7kHN1-9dD_4",
+        "file_name": "sander02.jpeg",
+        "title": "Belt sander"
+      },
+      "category": {
+        "id": 9,
+        "parent_id": 2,
+        "name": "Sander",
+        "slug": "sander"
+      },
+      "brand": {
+        "id": 1,
+        "name": "Brand name 1",
+        "slug": "brand-name-1"
+      }
+    },
+    {
+      "id": 21,
+      "name": "Circular Saw",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut fermentum tortor. Donec dolor urna, cursus sed scelerisque a, pulvinar eu metus. Vestibulum consectetur neque at diam laoreet, quis pharetra lacus auctor. Vestibulum volutpat porttitor lectus et hendrerit. Sed aliquet ultricies lobortis. Integer quis felis vel orci porta vehicula. Suspendisse potenti. Nullam nec ligula sed urna fermentum efficitur ac quis turpis. Aliquam ac molestie dui. Integer eleifend mattis metus id tristique. Donec aliquet erat vehicula dolor faucibus porta. Vestibulum est leo, bibendum in luctus non, tristique pellentesque lectus. Nam sit amet convallis est. Nam molestie finibus eros vitae facilisis.",
+      "stock": 11,
+      "price": 80.19,
+      "is_location_offer": 0,
+      "is_rental": 0,
+      "brand_id": 1,
+      "category_id": 10,
+      "product_image_id": 21,
+      "product_image": {
+        "id": 21,
+        "by_name": "Luther.M.E. Bottrill",
+        "by_url": "https://unsplash.com/@luthermeb",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/EgIT3YHBo9E",
+        "file_name": "saw02.jpeg",
+        "title": "Saw"
+      },
+      "category": {
+        "id": 10,
+        "parent_id": 2,
+        "name": "Saw",
+        "slug": "saw"
+      },
+      "brand": {
+        "id": 1,
+        "name": "Brand name 1",
+        "slug": "brand-name-1"
+      }
+    }
+  ],
+  "from": 1,
+  "last_page": 6,
+  "per_page": 9,
+  "to": 9,
+  "total": 50
+}
