@@ -6,7 +6,7 @@ export abstract class BasePage {
   }
   // constructor(protected page: Page) {}
 
-  async goto(): Promise<void> {
-    await this.page.goto('/', { waitUntil: 'load' });
+  async goto(path: string = '/'): Promise<void> {
+    await this.page.goto(path, { waitUntil: 'load' });
   }
 }

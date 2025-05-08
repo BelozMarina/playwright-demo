@@ -121,4 +121,18 @@ export class HomePage extends BasePage {
   async selectCard(selectorName: string): Promise<void> {
     await this.page.getByAltText(`${selectorName}`).click();
   }
+
+  async mockProductsResponse(json: unknown): Promise<void> {
+    await this.page.route('**/products*', async (route) => {
+      await route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        body: JSON.stringify(json),
+      });
+    });
+  }
+
+  async expectMockProductsResponse(): Promise<void> {
+    await expect(this.productName).toHaveCount(20);
+  }
 }
