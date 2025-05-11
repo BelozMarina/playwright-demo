@@ -27,10 +27,9 @@ export class LoginPage extends BasePage {
   }
 
   async expectLogin(): Promise<void> {
-    await expect(
-      this.page,
-      `URL mismatch! Expected: ${envConfig.WEB_URL}/account`
-    ).toHaveURL(`${envConfig.WEB_URL}/account`);
+    await expect(this.page, `Expected: ${envConfig.WEB_URL}/account`).toHaveURL(
+      `${envConfig.WEB_URL}/account`
+    );
     await expect(
       this.pageTitle,
       'Page title is incorrect! Expected: "My account"'

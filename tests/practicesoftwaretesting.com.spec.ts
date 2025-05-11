@@ -19,6 +19,10 @@ import { ProductsName } from '../pages/home/enums/categoryEnum';
 // });
 
 test('Verify login with valid credentials', async ({ loggedApp }) => {
+  await test.step('Navigate to my account page', async () => {
+    await loggedApp.homePage.goto('/account');
+  });
+
   await test.step('Verify successful login', async () => {
     await loggedApp.loginPage.expectLogin();
   });
