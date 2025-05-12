@@ -1,10 +1,7 @@
 import { Categories, PowerTools } from '../pages/home/enums/categoryEnum';
 import { test } from '../fixtures';
 
-// test.use({
-//   storageState: path.join(__dirname, '../.auth/user.json'),
-// });
-test('Verify user can filter products by category', async ({ app }) => {
+test('Verify user can filter products by category @Ta97cca06', async ({ app }) => {
   await test.step('Navigate to home page', async () => {
     await app.homePage.goto();
   });
@@ -24,7 +21,7 @@ test('Verify user can filter products by category', async ({ app }) => {
 ].forEach((categories) => {
   test(`Verify user can filter products by several categories - ${categories.join(
     ' and '
-  )} and all sub-categories`, async ({ app }) => {
+  )} and all sub-categories @T585f2a3a`, async ({ app }) => {
     let countPage = 0;
 
     await test.step('Navigate to home page', async () => {
