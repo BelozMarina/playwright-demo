@@ -17,6 +17,7 @@ jobs:
       CARD_HOLDER_NAME: ${{secrets.CARD_HOLDER_NAME}}
       CARD_EXPIRY: ${{ secrets.CARD_EXPIRY }}
       CARD_CVV: ${{ secrets.CARD_CVV }}
+      TESTOMATIO: ${{ secrets.TESTOMATIO }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

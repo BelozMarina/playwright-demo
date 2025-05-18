@@ -4,13 +4,19 @@ on:
   workflow_dispatch:
     inputs:
       grep:
-        description: 'tests to grep '
+        description: 'Filter tests by pattern'
         required: false
         default: ''
+        type: string
       run:
+        description: 'Specific test to run'
         required: false
+        type: string
       testomatio:
+        description: 'Testomatio API key'
         required: false
+        type: string
+
 jobs:
   test:
     timeout-minutes: 60
@@ -24,20 +30,35 @@ jobs:
       CARD_HOLDER_NAME: ${{secrets.CARD_HOLDER_NAME}}
       CARD_EXPIRY: ${{ secrets.CARD_EXPIRY }}
       CARD_CVV: ${{ secrets.CARD_CVV }}
-      TESTOMATIO: ${{ secrets.TESTOMATIO }}
+      TESTOMATIO: ${{ github.event.inputs.testomatio || secrets.TESTOMATIO }}
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
+
       - name: Install dependencies
         run: npm ci
+
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Run Playwright tests
-        run: npx playwright test
+
+      - name: Run Playwright tests with Testomatio
+        run: |
+          if [ "${{ github.event.inputs.grep }}" != "" ]; then
+            npx playwright test --grep "${{ github.event.inputs.grep }}"
+          elif [ "${{ github.event.inputs.run }}" != "" ]; then
+            npx playwright test "${{ github.event.inputs.run }}"
+          else
+            npx playwright test
+          fi
+        env:
+          TESTOMATIO: ${{ env.TESTOMATIO }}
+
       - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
+        if: always()
         with:
           name: playwright-report
           path: playwright-report/

@@ -18,7 +18,7 @@ import { ProductsName } from '../pages/home/enums/categoryEnum';
 //   });
 // });
 
-test('Verify login with valid credentials', async ({ loggedApp }) => {
+test('Verify login with valid credentials @T720ef0c8', async ({ loggedApp }) => {
   await test.step('Navigate to my account page', async () => {
     await loggedApp.homePage.goto('/account');
   });
@@ -28,7 +28,7 @@ test('Verify login with valid credentials', async ({ loggedApp }) => {
   });
 });
 
-test('Verify user can view product details', async ({ app }) => {
+test('Verify user can view product details @T02e2a814', async ({ app }) => {
   await test.step('Navigate to home page', async () => {
     await app.homePage.goto();
   });
@@ -45,7 +45,7 @@ test('Verify user can view product details', async ({ app }) => {
   });
 });
 
-test('Verify user can add product to cart', async ({ app }) => {
+test('Verify user can add product to cart @Ta63c211e', async ({ app }) => {
   await test.step('Navigate to home page', async () => {
     await app.homePage.goto();
   });

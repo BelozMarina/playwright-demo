@@ -2,7 +2,7 @@ import { test } from '../fixtures';
 import { ProductsName } from '../pages/home/enums/categoryEnum';
 import { billingAddress } from '../testData/billingAddressData';
 import { creditCardData } from '../testData/creditCardData';
-test('E2E purchase flow: add to cart → checkout → payment (logged-in user)', async ({
+test('E2E purchase flow: add to cart → checkout → payment (logged-in user) @T91dccb03', async ({
   loggedApp,
 }) => {
   await test.step('Navigate to home page', async () => {

@@ -7,7 +7,7 @@ import {
 import { SortOption } from '../pages/home/fragments/products.filters.fragment';
 
 sortOptionNameData.forEach((sortOpt) => {
-  test(`Verify user can perform sorting products by ${sortOpt}`, async ({
+  test(`Verify user can perform sorting products by ${sortOpt} @Tf7883a58`, async ({
     page,
   }) => {
     const homePage = new HomePage(page);
@@ -27,7 +27,7 @@ sortOptionNameData.forEach((sortOpt) => {
 });
 
 sortOptionPriceData.forEach((option) => {
-  test(`Verify user can perform sorting products by ${option}`, async ({
+  test(`Verify user can perform sorting products by ${option} @T8359a3a0`, async ({
     page,
   }) => {
     const homePage = new HomePage(page);
