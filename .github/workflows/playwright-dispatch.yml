@@ -7,8 +7,8 @@ on:
         description: ''
         type: choice
         options:
-          - '@regression'
-          - '@smoke'
+          - 'regression'
+          - 'smoke'
 jobs:
   test:
     timeout-minutes: 60
