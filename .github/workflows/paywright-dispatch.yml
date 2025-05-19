@@ -1,14 +1,14 @@
-name: Playwright Dispatch Tests
+name: Playwright Parametrize Tests
 on:
   workflow_dispatch:
     inputs:
-      run:
-        description: 'Filter tests by project tag'
+      project:
         required: true
+        description: ''
         type: choice
         options:
-          - '@smoke'
           - '@regression'
+          - '@smoke'
 jobs:
   test:
     timeout-minutes: 60
@@ -33,7 +33,12 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: npx playwright test --grep @regression
+        run: |
+          if [ "${{ github.event.inputs.project }}" != "" ]; then
+            xvfb-run npx playwright test -c playwright.config.ts --project=${{ github.event.inputs.project }}
+          else
+            npx playwright test
+          fi
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
