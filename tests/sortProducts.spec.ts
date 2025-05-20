@@ -16,9 +16,19 @@ sortOptionNameData.forEach((sortOpt) => {
       await test.step('Navigate to home page', async () => {
         await homePage.goto();
       });
+      await test.step('Navigate to home page', async () => {
+        await homePage.goto();
+      });
 
       await test.step(`Select option sorting by ${sortOpt}`, async () => {
         await homePage.filtersFragment.selectSortOptions(sortOpt as SortOption);
+      });
+      await test.step(`Select option sorting by ${sortOpt}`, async () => {
+        await homePage.filtersFragment.selectSortOptions(sortOpt as SortOption);
+      });
+
+      await test.step(`Verify products are sorted by ${sortOpt}`, async () => {
+        await homePage.expectSortedProductsByName(sortOpt as SortOption);
       });
 
       await test.step(`Verify products are sorted by ${sortOpt}`, async () => {

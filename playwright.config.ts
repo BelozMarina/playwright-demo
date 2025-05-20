@@ -61,6 +61,21 @@ export default defineConfig({
         ...devices['Desktop Chrome'],
       },
     },
+    {
+      name: 'smoke',
+      grep: /@smoke/,
+      use: {
+        ...devices['Desktop Chrome'],
+      },
+    },
+
+    {
+      name: 'regression',
+      grep: /@regression/,
+      use: {
+        ...devices['Desktop Chrome'],
+      },
+    },
 
     {
       name: 'smoke',
