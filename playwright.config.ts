@@ -77,22 +77,6 @@ export default defineConfig({
       },
     },
 
-    {
-      name: 'smoke',
-      grep: /@smoke/,
-      use: {
-        ...devices['Desktop Chrome'],
-      },
-    },
-
-    {
-      name: 'regression',
-      grep: /@regression/,
-      use: {
-        ...devices['Desktop Chrome'],
-      },
-    },
-
     // {
     //   name: 'firefox',
     //   use: { ...devices['Desktop Firefox'] },
