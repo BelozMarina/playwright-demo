@@ -1,7 +1,7 @@
 name: Playwright Regression Tests
 on:
-  schedule:
-    - cron: '0 8 * * 1-5'
+  push:
+    branches: [main, master, '**']
 jobs:
   test:
     timeout-minutes: 60
